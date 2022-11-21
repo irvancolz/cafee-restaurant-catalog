@@ -40,7 +40,6 @@ html {
 
 body {
   font-family: var(--open-family);
-  font-weight: var(--desc-font-weight);
 }
 a {
   text-decoration: none;
@@ -49,7 +48,20 @@ button,
 input {
   appearance: none;
 }
-
+.skip-content{
+  position: absolute;
+  top: -100%;
+  color: var(--black-bg-col);
+  background-color: var(--gray-bg-col);
+  padding: 1rem; 
+  position: absolute;
+  font-family: var(--cormorant-family);
+}
+.skip-content:focus{
+  top: 0;
+  border: 1px solid var(--black-bg-col);
+  outline: 1px solid var(--black-bg-col);
+}
 /* tablet size  */
 
 @media (min-width: 900px) {
