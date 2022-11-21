@@ -1,3 +1,79 @@
-img {
-  display: block;
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap");
+
+:root {
+  font-size: 16px;
+  --gray-bg-col: #dfdfdf;
+  --black-bg-col: #001308;
+  --normal-text-col: #ffffff;
+  --dark-text-col: #000000;
+  --title-font-weight: 700;
+  --desc-font-weight: 300;
+  --subtitle-font-weight: 600;
+  --gold-bg-col: #e1c86c;
+  --shadow-col: #0000002e;
+  --cormorant-family: "cormorant", sans-serif;
+  --open-family: "Open sans", sans-serif;
+
+  /* mutable value */
+  --section-title-size: 3rem;
+  --section-subtitle-size: 2rem;
+  --card-desc-size: 1.15rem;
+  --card-title-size: 2rem;
+  --card-subtitle-size: 1.5rem;
+  --scroll-padding-space: 158px;
+  --nav-link-size: 1.5rem;
+  --copyright-size: 0.75rem;
+  --topnav-padding: 40px;
+  --copyright-padding: 2rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--scroll-padding-space);
+}
+
+body {
+  font-family: var(--open-family);
+  font-weight: var(--desc-font-weight);
+}
+a {
+  text-decoration: none;
+}
+button,
+input {
+  appearance: none;
+}
+
+/* tablet size  */
+
+@media (min-width: 900px) {
+  :root {
+    --scroll-padding-space: 170px;
+    --card-desc-size: 1.15rem;
+    --card-subtitle-size: 1.5rem;
+    --card-title-size: 2rem;
+    --section-title-size: 4.5rem;
+    --nav-link-size: 4rem;
+    --section-subtitle-size: 4rem;
+    --topnav-padding: 63px;
+    --copyright-padding: 60px;
+  }
+}
+/* large screen size */
+@media (min-width: 1600px) {
+  :root {
+    --scroll-padding-space: 185px;
+    --card-desc-size: 4rem;
+    --section-title-size: 8rem;
+    --copyright-size: 1rem;
+    --section-subtitle-size: 6rem;
+    --topnav-padding: 0px;
+    --copyright-padding: 27px;
+  }
 }
