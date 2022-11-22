@@ -7,18 +7,35 @@
   </head>
   <body>
     <a href="#content" class="skip-content">skip to content</a>
-    <header class="header">
-      <nav class="topnav"></nav>
-      <a class="logo">
-      </a>
-      <div class="menu"></div>
-    </header>
-    <main id="content">
-      <div class="hero"></div>
-      <div class="hotspots"></div>
-      <div class="restaurant-list"></div>
-    </main>
-    <footer class="footer">
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__logo__container container">
+          <a href="#" class="header__logo">
+            <img src="./images/Cafee-logo.png" alt="Cafee-logo">
+          </a>
+          <button class="header__menu__btn">send</button>
+        </div>
+        <nav class="topnav container">
+          <ul>
+            <li class="topnav__links"><a href="#">home</a></li>
+            <li class="topnav__links"><a href="#">about us</a></li>
+            <li class="topnav__links"><a href="#">resto</a></li>
+            <li class="topnav__links"><a href="#">favourite</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main id="content">
+        <div class="hero">
+          <h1 class="hero__text">
+            Look no further for interesting restaurants
+          </h1>
+          <img class="hero__img" src="./images/heros/hero-image.png" alt="Cafee-hero-image">
+        </div>
+        <div class="hotspots"></div>
+        <div class="restaurant-list"></div>
+      </main>
+    </div>
+    <footer class="footer container">
       <div class="newsletter"></div>
       <nav class="footer_nav"></nav>
       <div class="footer_logo"></div>

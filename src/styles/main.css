@@ -21,10 +21,11 @@
   --card-title-size: 2rem;
   --card-subtitle-size: 1.5rem;
   --scroll-padding-space: 158px;
-  --nav-link-size: 1.5rem;
   --copyright-size: 0.75rem;
   --topnav-padding: 40px;
   --copyright-padding: 2rem;
+  --nav-link-size: 4rem;
+
 }
 
 * {
@@ -40,13 +41,25 @@ html {
 
 body {
   font-family: var(--open-family);
+  overflow-x: hidden;
 }
 a {
   text-decoration: none;
+  color: inherit;
+}
+ul{
+  list-style: none;
 }
 button,
 input {
   appearance: none;
+}
+.wrapper{
+  position: relative;
+}
+.container{
+  max-width: 1600px;
+  margin: auto;
 }
 .skip-content{
   position: absolute;
@@ -71,7 +84,6 @@ input {
     --card-subtitle-size: 1.5rem;
     --card-title-size: 2rem;
     --section-title-size: 4.5rem;
-    --nav-link-size: 4rem;
     --section-subtitle-size: 4rem;
     --topnav-padding: 63px;
     --copyright-padding: 60px;
@@ -87,5 +99,7 @@ input {
     --section-subtitle-size: 6rem;
     --topnav-padding: 0px;
     --copyright-padding: 27px;
+  --nav-link-size: 1.5rem;
+
   }
 }
