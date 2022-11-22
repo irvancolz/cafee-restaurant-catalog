@@ -1,0 +1,33 @@
+.hero{
+    height: 100vh;
+    width: 100vw;
+    background-image: url("../public/images/heros/hero-image.png");
+    background-position: center;
+    background-size: auto;
+    padding-top: 118px;
+}
+.hero__text{
+    font-size: var( --section-title-size);
+    font-family: var(--cormorant-family);
+    color: var(--normal-text-col);
+    width: 329px;
+    margin: auto;
+    text-align: center;
+    text-transform: capitalize;
+}
+@media (min-width: 900px){
+    .hero{
+        padding-top: 162px;
+    }
+    .hero__text{
+        width: 510px;
+    }
+}
+@media (min-width: 1300px){
+    .hero{
+        padding-top: 89px;
+    }
+    .hero__text{
+        width: 1200px;
+    }
+}

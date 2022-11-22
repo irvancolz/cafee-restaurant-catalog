@@ -90,7 +90,7 @@ input {
   }
 }
 /* large screen size */
-@media (min-width: 1600px) {
+@media (min-width: 1300px) {
   :root {
     --scroll-padding-space: 185px;
     --card-desc-size: 4rem;
