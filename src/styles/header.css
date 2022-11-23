@@ -55,7 +55,7 @@
 .topnav__links:hover a::after{
     width: 100%;
 }
-@media (min-width: 1300px){
+@media (min-width: 1200px){
     .header__logo__container{
         padding: 60px 0 0;
     }
@@ -64,10 +64,11 @@
     }
     .topnav{
         height: fit-content;
+        padding: 1rem 0;
     }
     .topnav ul{
         flex-direction: row;
-        gap: 50px;
+        gap: 100px;
         justify-content: center;
     }
     .topnav__links{
@@ -76,5 +77,8 @@
     }
     .topnav__links a{
         font-size: 1.5rem;
+    }
+    .topnav__links:hover{
+        background-color: var(--dark-bg-col);
     }
 }
