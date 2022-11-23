@@ -1,0 +1,39 @@
+.hotspots {
+  margin-top: 40px;
+}
+.hotspots__title {
+  font-size: var(--section-title-size);
+  font-family: var(--cormorant-family);
+  margin: auto;
+  text-align: center;
+  width: 100%;
+  text-shadow: 4px 2px var(--shadow-col);
+
+}
+.hotspots__title__container {
+  width: 100%;
+  margin: auto;
+}
+.hotspots__title span {
+  position: relative;
+  background-image: url("../public/images/Vector\ 1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+@media (min-width: 900px) {
+  .hotspots {
+    margin-top: 60px;
+  }
+  .hotspots__title__container {
+    width: 520px;
+  }
+}
+@media (min-width: 1200px) {
+  .hotspots {
+    margin-top: 270px;
+  }
+  .hotspots__title__container {
+    width: 50%;
+  }
+}

@@ -4,7 +4,7 @@
   background-color: var(--black-bg-col);
   background-image: url("../public/images/heros/hero-image_3.jpg");
   background-position: center;
-  background-size: auto;
+  background-size: cover;
   padding-top: 118px;
 }
 .hero__text {
@@ -16,7 +16,7 @@
   text-align: center;
   text-transform: capitalize;
 }
-@media (min-width: 1200px) {
+@media (min-width: 900px) {
   .hero {
     padding-top: 162px;
   }
