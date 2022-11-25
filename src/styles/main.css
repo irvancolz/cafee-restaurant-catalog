@@ -19,7 +19,7 @@
   --section-subtitle-size: 2rem;
   --card-desc-size: 1.15rem;
   --card-title-size: 2rem;
-  --card-subtitle-size: 1.5rem;
+  --card-subtitle-size: 1rem;
   --scroll-padding-space: 158px;
   --copyright-size: 0.75rem;
   --topnav-padding: 40px;
@@ -106,7 +106,7 @@ button{
     --section-subtitle-size: 6rem;
     --topnav-padding: 0px;
     --copyright-padding: 27px;
-  --nav-link-size: 1.5rem;
+    --nav-link-size: 1.5rem;
 
   }
 }

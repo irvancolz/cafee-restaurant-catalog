@@ -1,0 +1,63 @@
+.restaurant-list__title {
+  font-size: var(--section-title-size);
+  font-family: var(--cormorant-family);
+  font-weight: 700;
+  text-transform: capitalize;
+  text-align: center;
+  text-shadow: 4px 2px var(--shadow-col);
+  margin: auto;
+}
+
+.resturant-list__container {
+  display: grid;
+  grid-template-columns: 1;
+}
+.resturant-list__container .restaurants {
+  flex-direction: column;
+}
+.resturant-list__container .restaurants img {
+  height: 300px;
+}
+.restaurant-list{
+    padding-inline: 2rem;
+}
+@media (min-width: 600px){
+    .resturant-list__container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+      .restaurant-list__title {
+        width: 8em;
+      }
+}
+@media (min-width: 900px) {
+    .restaurant-list__title{
+        width: 50%;
+    }
+  
+  .resturant-list__container .restaurants img {
+    height: 540px;
+  }
+  .resturant-list__container .restaurants .restaurants__header{
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+}
+@media (min-width: 1200px) {
+  .resturant-list__container {
+    grid-template-columns: repeat(3, minmax(300px, 350px));
+    justify-content: center;
+  }
+  .resturant-list__container .restaurants {
+    padding: 0.5rem 0.5rem 3rem;
+  }
+  .resturant-list__container .restaurants:hover {
+    background-color: #eee;
+  }
+  .resturant-list__container .restaurants:hover img {
+    scale: 1.01;
+  }
+  .restaurant-list__title{
+    width: 60%;
+}
+}

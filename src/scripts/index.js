@@ -4,5 +4,6 @@ import '../styles/header.css';
 import '../styles/hero.css';
 import '../styles/hotspots.css';
 import '../styles/restaurants.css';
+import '../styles/restaurant-list.css';
 
 console.log('Hello Coders! :)');

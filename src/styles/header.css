@@ -1,10 +1,8 @@
 .header{
     background-color: var(--dark-text-col);
     color: var(--normal-text-col);
-    position: absolute;
-    top: -10px;
-    visibility: hidden;
-    opacity: 0;
+
+    top: -1px;
 }
 .header__logo__container{
     padding: var(--topnav-padding);

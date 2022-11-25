@@ -1,18 +1,18 @@
 .restaurants {
   display: flex;
   flex-direction: column;
-  max-width: 320px;
-  margin: auto;
   background-color: var(--gray-bg-col);
   transition: background-color 0.2s ease-out;
-  padding: 1rem;
   border-radius: 0.5rem;
-
-  padding: 9.5rem 1.5rem;
+  overflow: hidden;
 }
-/* .restaurants:hover {
-  background-color: #eeeeee;
-} */
+.restaurants img {
+  object-fit: cover;
+  transition: 0.5s ease-out;
+}
+.restaurants__content {
+  padding: 1rem;
+}
 .restaurants__header {
   display: flex;
   justify-content: space-between;
@@ -22,14 +22,15 @@
   font-family: var(--cormorant-family);
   font-size: var(--card-title-size);
   font-weight: 700;
+  flex-grow: 1;
 }
 .restaurants__subtitle {
   font-family: var(--open-family);
-  font-size: var(---card-subtitle-size);
+  font-size: var(--card-subtitle-size);
   font-weight: 700;
 }
 .restaurants__subtitle span {
-  margin-left: 1em;
+  margin-left: .5em;
 }
 .restaurants__text {
   font-family: var(--open-family);
@@ -50,12 +51,9 @@
 @media (min-width: 900px) {
   .restaurants {
     flex-direction: row;
-    max-width: 100%;
-    gap: 80px;
   }
   .restaurants__header {
     flex-direction: column;
-    gap: 11px;
   }
 }
 
@@ -64,7 +62,5 @@
     flex-direction: column;
     align-items: flex-start;
   }
-  .restaurants > * {
-    flex-basis: 50%;
-  }
+
 }
