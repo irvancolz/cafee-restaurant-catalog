@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Restaurant Apps Starter Project</title>
   </head>
   <body>
@@ -30,14 +30,46 @@
             Look no further for interesting restaurants
           </h1>
         </div>
-        <div class="hotspots">
-          <section class="hotspots__title__container">
+        <section class="hotspots">
+          <div class="hotspots__title__container">
             <h2 class="hotspots__title">
               Check out this week's
               <span> hotspots </span>
             </h2>
-          </section>
-        </div>
+          </div>
+          <div class="restaurants container">
+            <img src="./images/restaurants.png" alt="restaurants-images" />
+            <section class="restaurants__content">
+              <div class="restaurants__header">
+                <h3 class="restaurants__title">Fairy Cafe</h3>
+                <p class="restaurants__subtitle">
+                  Malang
+                  <span>3.9</span>
+                  <svg
+                    class="star"
+                    width="22"
+                    height="22"
+                    viewBox="0 0 22 22"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11.0995 1.79473L13.0245 8.43109L13.1292 8.7918H13.5047H19.8818L14.6757 13.0286L14.4188 13.2376L14.5111 13.5557L16.4703 20.3098L11.4151 16.1958L11.0995 15.9389L10.7839 16.1958L5.72866 20.3097L7.68786 13.5557L7.78013 13.2376L7.52326 13.0286L2.31711 8.7918H8.6942H9.06977L9.1744 8.43109L11.0995 1.79473Z"
+                      fill="#E1C86C"
+                      stroke="#E1C86C"
+                    />
+                  </svg>
+                </p>
+              </div>
+              <button class="book__btn">Book Table</button>
+              <article class="restaurants__text">
+                But I must explain to you how all this mistaken idea of
+                denouncing pleasure and praising pain was born and I will give
+                you a complete
+              </article>
+            </section>
+          </div>
+        </section>
         <div class="restaurant-list"></div>
       </main>
     </div>

@@ -5,6 +5,7 @@
   background-image: url("../public/images/heros/hero-image_3.jpg");
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
   padding-top: 118px;
 }
 .hero__text {

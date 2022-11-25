@@ -55,6 +55,9 @@ button,
 input {
   appearance: none;
 }
+button{
+  cursor: pointer;
+}
 .wrapper{
   position: relative;
 }
@@ -95,7 +98,9 @@ input {
 @media (min-width: 1200px) {
   :root {
     --scroll-padding-space: 185px;
-    --card-desc-size: 4rem;
+    --card-desc-size: 2rem;
+    --card-title-size: 4rem;
+    --card-subtitle-size: 1.5rem;
     --section-title-size: 8rem;
     --copyright-size: 1rem;
     --section-subtitle-size: 6rem;
