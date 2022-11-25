@@ -32,7 +32,7 @@
 }
 @media (min-width: 900px) {
     .restaurant-list__title{
-        width: 50%;
+        width: 60%;
     }
   
   .resturant-list__container .restaurants img {
@@ -57,7 +57,5 @@
   .resturant-list__container .restaurants:hover img {
     scale: 1.01;
   }
-  .restaurant-list__title{
-    width: 60%;
-}
+
 }
