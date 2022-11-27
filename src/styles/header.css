@@ -1,12 +1,18 @@
 .header{
-    background-color: var(--dark-text-col);
     color: var(--normal-text-col);
-
-    top: -1px;
+    position: sticky;
+    top: 0;
 }
 .header__logo__container{
-    padding: var(--topnav-padding);
+    background-color: var(--dark-text-col);
+    padding-block: var(--topnav-padding);
+    padding-inline: 40px;
     display: flex;
+}
+.header__menu__btn{
+    border: none;
+    background-color: transparent;
+    color: var(--normal-text-col);
 }
 .header__logo{
     margin: auto;
@@ -15,17 +21,35 @@
     width: 44px;
 }
 .topnav{
+    position: absolute;
     height: calc(100vh - var(--topnav-padding));
+    z-index: 5;
 }
 .topnav ul{
-
     display: flex;
     flex-direction: column;
+}
+.topnav .links{
+    background-color: var(--dark-text-col);
+    transition: all .3s ease-out;
+}
+.topnav ul[data-state="close"] .links{
+    transform: translateX(100%);
+}
+.topnav ul[data-state="open"] .links{
+    transform: translateX(0%);
 }
 .topnav .links:hover{
     background-color: #fff;
 }
 @media (min-width: 1200px){
+    .header, .topnav{
+        position: static;
+        background-color: var(--dark-text-col);
+    }
+    .topnav .links{
+        transform: translateX(0);
+    }
     .header__logo__container{
         padding: 60px 0 0;
     }
