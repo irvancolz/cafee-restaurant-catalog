@@ -94,6 +94,15 @@
   background-color: transparent;
   color: var(--normal-text-col);
 }
+.newsletter__submit{
+  transition: all .3s ease-in-out .1s;
+  transform: translateX(-20px);
+  opacity: 0;
+}
+.newsletter__subscription .input:focus-within ~ .newsletter__submit, .newsletter__submit:focus{
+  transform: translateX(0);
+  opacity: 1;
+}
 @media (min-width: 600px) {
     .newsletter__title{
         text-align: start;
