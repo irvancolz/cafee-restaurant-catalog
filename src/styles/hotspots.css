@@ -1,10 +1,10 @@
 .hotspots {
-  margin-top: 40px;
+  padding-block: 40px 50px;
 }
 .hotspots__title {
   font-size: var(--section-title-size);
   font-family: var(--cormorant-family);
-  margin: auto;
+  margin: 0 auto 40px;
   text-transform: capitalize;
   text-align: center;
   text-shadow: 4px 2px var(--shadow-col);
@@ -18,7 +18,7 @@
 }
 @media (min-width: 600px) {
   .hotspots {
-    padding-inline: 3rem;
+    padding: 60px 0 180px ;
   }
   .hotspots .restaurants {
     flex-direction: column;
@@ -31,9 +31,7 @@
   }
 }
 @media (min-width: 900px) {
-  .hotspots {
-    margin-top: 60px;
-  }
+  
   .hotspots .restaurants {
     flex-direction: row;
   }
@@ -41,7 +39,6 @@
     padding-inline: 3rem;
   }
   .hotspots__title {
-    margin: auto;
     width: 70%;
   }
   .hotspots .restaurants > * {
@@ -50,11 +47,11 @@
 }
 @media (min-width: 1200px) {
   .hotspots {
-    margin-top: 270px;
+    padding-block: 270px;
   }
   .hotspots__title {
-    margin: auto;
-    width: 60%;
+    margin: 0 auto 112px;
+    width: 70%;
   }
   .hotspots .restaurants {
     gap: 2rem;

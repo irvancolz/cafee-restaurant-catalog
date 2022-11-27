@@ -39,7 +39,7 @@
 }
 @media (min-width: 900px) {
   .restaurant-list__title {
-    width: 60%;
+    width: 70%;
   }
 
   .resturant-list__container .restaurants img {
