@@ -5,5 +5,5 @@ import '../styles/hero.css';
 import '../styles/hotspots.css';
 import '../styles/restaurants.css';
 import '../styles/restaurant-list.css';
-
-console.log('Hello Coders! :)');
+import '../styles/footer.css';
+import '../styles/link.css';
