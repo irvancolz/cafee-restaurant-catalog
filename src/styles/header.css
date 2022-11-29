@@ -34,7 +34,7 @@
     transition: all .3s cubic-bezier(.1,.33,.75,.85);
 }
 .topnav ul[data-state="close"] .links{
-    transform: translateX(100%);
+    transform: translateX(100%);            
 }
 .topnav ul[data-state="open"] .links{
     transform: translateX(0%);
@@ -49,6 +49,7 @@
     }
     .topnav .links{
         transform: translateX(0);
+        transition-delay: 0ms;
     }
     .header__logo__container{
         padding: 60px 0 0;
