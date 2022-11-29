@@ -9,3 +9,4 @@ import "../styles/footer.css";
 import "../styles/link.css";
 import "./menu";
 import "./restaurant-list";
+import "./topnav-links";

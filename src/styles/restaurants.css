@@ -23,6 +23,10 @@
   font-size: var(--card-title-size);
   font-weight: 700;
   flex-grow: 1;
+  height: 2em;
+  line-height: 1;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .restaurants__subtitle {
   font-family: var(--open-family);
@@ -36,6 +40,10 @@
   font-family: var(--open-family);
   font-weight: 400;
   font-size: var(--card-desc-size);
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
 }
 .restaurants .book__btn {
   width: 100%;
@@ -62,5 +70,4 @@
     flex-direction: column;
     align-items: flex-start;
   }
-
 }

@@ -31,7 +31,7 @@
 }
 .topnav .links{
     background-color: var(--dark-text-col);
-    transition: all .3s ease-out;
+    transition: all .3s cubic-bezier(.1,.33,.75,.85);
 }
 .topnav ul[data-state="close"] .links{
     transform: translateX(100%);
