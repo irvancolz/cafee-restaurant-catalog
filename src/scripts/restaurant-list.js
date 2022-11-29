@@ -46,3 +46,5 @@ function createRestaurantCards(data) {
     </section>
   `;
 }
+
+export default createRestaurantCards;

@@ -10,3 +10,4 @@ import "../styles/link.css";
 import "./menu";
 import "./restaurant-list";
 import "./topnav-links";
+import "./hotspot";
