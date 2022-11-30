@@ -91,4 +91,7 @@
   .topnav .links:hover {
     background-color: var(--dark-bg-col);
   }
+  .topnav ul[data-state="close"] .links {
+    transform: translateX(0);
+  }
 }
