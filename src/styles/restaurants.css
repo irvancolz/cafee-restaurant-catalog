@@ -34,7 +34,7 @@
   font-weight: 700;
 }
 .restaurants__subtitle span {
-  margin-left: .5em;
+  margin-left: 0.5em;
 }
 .restaurants__text {
   font-family: var(--open-family);
@@ -42,7 +42,7 @@
   font-size: var(--card-desc-size);
   display: -webkit-box;
   -webkit-line-clamp: 7;
-  -webkit-box-orient: vertical;  
+  -webkit-box-orient: vertical;
   overflow: hidden;
 }
 .restaurants .book__btn {
@@ -55,7 +55,28 @@
   padding: 0.9rem;
   border-radius: 10px;
   margin-block: 12px 23px;
+  position: relative;
+  overflow: hidden;
 }
+.restaurants .book__btn:hover {
+  transition-delay: 0.1s;
+  color: var(--gold-bg-col);
+}
+.restaurants .book__btn::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  background-color: var(--gold-bg-col);
+  transition: height 0.2s ease-out, bottom 0.2s ease-in-out 0.4s;
+  width: 100%;
+  height: 0%;
+}
+.restaurants .book__btn:hover::after {
+  height: 100%;
+  bottom: 100%;
+}
+
 @media (min-width: 900px) {
   .restaurants {
     flex-direction: row;
