@@ -65,7 +65,7 @@
   border: none;
   border-bottom: 3px solid var(--normal-text-col);
   outline: none;
-  padding: .5rem 0;
+  padding: .65rem 0;
 }
 .newsletter__subscription input:invalid {
   border-bottom: 3px solid crimson;
