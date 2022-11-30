@@ -14,7 +14,7 @@ function createRestaurantCards(data) {
   return `
     <img
       src="${data.pictureId}"
-      alt="${data.id} images"
+      alt="${data.name} restaurants images"
       loading="lazy"
     />
     <section class="restaurants__content">
