@@ -35,6 +35,7 @@
   
   .hotspots .restaurants {
     flex-direction: row;
+    gap: 1rem;
   }
   .hotspots {
     padding-inline: 3rem;
@@ -43,7 +44,8 @@
     width: 70%;
   }
   .hotspots .restaurants > * {
-    flex-basis: 50%;
+    max-width: 50%;
+    flex-grow: 0;
   }
 }
 @media (min-width: 1200px) {
