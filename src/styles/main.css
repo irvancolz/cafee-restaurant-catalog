@@ -67,12 +67,11 @@ button{
   margin: auto;
 }
 .skip-content{
-  position: absolute;
+  position: fixed;
   top: -100%;
   color: var(--black-bg-col);
   background-color: var(--gray-bg-col);
   padding: 1rem; 
-  position: absolute;
   font-family: var(--cormorant-family);
 }
 .skip-content:focus{

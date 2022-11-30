@@ -2,7 +2,8 @@
   color: var(--normal-text-col);
   position: sticky;
   top: 0;
-  z-index: 100;
+  /* avoid collising with skip to content */
+  z-index: 99;
 }
 .header__logo__container {
   background-color: var(--dark-text-col);
