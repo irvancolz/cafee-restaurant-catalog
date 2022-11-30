@@ -12,7 +12,8 @@
   font-size: var(--section-title-size);
   font-family: var(--cormorant-family);
   color: var(--normal-text-col);
-  width: 329px;
+  max-width: 329px;
+  width: 80%;
   margin: auto;
   text-align: center;
   text-transform: capitalize;
@@ -22,7 +23,7 @@
     padding-top: 162px;
   }
   .hero__text {
-    width: 510px;
+    max-width: 100%;
   }
 }
 @media (min-width: 1300px) {
@@ -30,6 +31,6 @@
     padding-top: 89px;
   }
   .hero__text {
-    width: 1200px;
+    max-width: 1200px;
   }
 }
