@@ -24,12 +24,17 @@
 }
 .topnav {
   position: absolute;
-  height: calc(100vh - var(--topnav-padding));
 }
 .topnav ul {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+}
+.topnav ul[data-state="close"]{
+  height: 0;
+}
+.topnav ul[data-state="open"]{
+  height: fit-content;
 }
 .topnav .links {
   background-color: var(--dark-text-col);
