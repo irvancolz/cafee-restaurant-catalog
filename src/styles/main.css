@@ -42,6 +42,7 @@ html {
 body {
   font-family: var(--open-family);
   background-color: var(--gray-bg-col);
+  overflow-x: hidden;
 }
 a {
   text-decoration: none;
