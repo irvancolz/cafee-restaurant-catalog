@@ -4,7 +4,7 @@ const restaurantListContainer = document.getElementById("restaurant-list");
 const restaurantList = restaurantsData.restaurants;
 
 restaurantList.forEach((res) => {
-    const restaurant = document.createElement("div");
+    const restaurant = document.createElement("article");
     restaurant.classList.add("restaurants");
     restaurant.innerHTML = createRestaurantCards(res)
   restaurantListContainer.append(restaurant);
@@ -16,6 +16,7 @@ function createRestaurantCards(data) {
       src="${data.pictureId}"
       alt="${data.name} restaurants images"
       loading="lazy"
+      title="${data.name} restaurants"
     />
     <section class="restaurants__content">
       <div class="restaurants__header">
