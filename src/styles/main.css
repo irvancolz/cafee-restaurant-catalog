@@ -77,6 +77,8 @@ button{
 }
 .skip-content:focus{
   top: 0;
+  left :0;
+  z-index: 100;
   border: 1px solid var(--black-bg-col);
   outline: 1px solid var(--black-bg-col);
 }
