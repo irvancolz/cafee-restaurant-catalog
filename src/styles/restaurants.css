@@ -11,12 +11,12 @@
   transition: 0.5s ease-out;
 }
 .restaurants__content {
-  padding: 1rem;
+  padding: .5rem;
 }
 .restaurants__header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 .restaurants__title {
   font-family: var(--cormorant-family);
@@ -83,6 +83,9 @@
   }
   .restaurants__header {
     flex-direction: column;
+  }
+  .restaurants__content{
+    padding: .1rem;
   }
 }
 
