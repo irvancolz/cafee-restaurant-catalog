@@ -57,23 +57,23 @@
   margin-block: 12px 23px;
   position: relative;
   overflow: hidden;
+  transition-delay: 0.2s;
 }
 .restaurants .book__btn:hover {
-  transition-delay: 0.1s;
   color: var(--gold-bg-col);
 }
 .restaurants .book__btn::after {
   position: absolute;
   content: "";
   left: 0;
-  bottom: 0;
-  background-color: var(--gold-bg-col);
-  transition: height 0.2s ease-out, bottom 0.2s ease-in-out 0.4s;
+  bottom: -100%;
+  transition: bottom 0.5s ease-in-out;
   width: 100%;
-  height: 0%;
+  height: 100%;
+  background-color: var(--normal-text-col);
 }
 .restaurants .book__btn:hover::after {
-  height: 100%;
+  background-color: var(--gold-bg-col);
   bottom: 100%;
 }
 
