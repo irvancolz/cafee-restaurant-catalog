@@ -41,7 +41,6 @@ html {
 
 body {
   font-family: var(--open-family);
-  overflow-x: hidden;
   background-color: var(--gray-bg-col);
 }
 a {

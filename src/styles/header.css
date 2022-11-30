@@ -23,11 +23,12 @@
 .topnav {
   position: absolute;
   height: calc(100vh - var(--topnav-padding));
-  z-index: 5;
 }
 .topnav ul {
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
+
 }
 .topnav .links {
   background-color: var(--dark-text-col);
