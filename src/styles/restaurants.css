@@ -23,7 +23,6 @@
   font-size: var(--card-title-size);
   font-weight: 700;
   flex-grow: 1;
-  height: 2em;
   line-height: 1;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -86,6 +85,9 @@
   }
   .restaurants__content{
     padding: .1rem;
+  }
+  .restaurants__title{
+  height: 2em;
   }
 }
 
