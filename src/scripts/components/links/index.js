@@ -7,6 +7,7 @@ class Links extends HTMLElement {
   connectedCallback() {
     this.text = this.getAttribute("text") || null;
     this.href = this.getAttribute("href") || null;
+    this.target = this.getAttribute("target") || "_self";
     this.render();
   }
 
@@ -26,8 +27,7 @@ class Links extends HTMLElement {
       list-style: none;
     }  
     .links {
-      flex-grow: 1;
-      padding: 2.5rem;
+      font-size: 1rem;
       transition: background-color 0.2s ease-in;
     }
     .links a {
@@ -67,7 +67,14 @@ class Links extends HTMLElement {
       }
     }
     </style>
-    <li class="links"><a href="${this.href}">${this.text}</a></li>`;
+    <li class="links">
+      <a 
+        href="${this.href}" 
+        target=${this.target}
+        >
+          ${this.text}
+        </a>
+      </li>`;
   }
 }
 

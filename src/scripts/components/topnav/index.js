@@ -1,4 +1,3 @@
-
 class Topnav extends HTMLElement {
   constructor() {
     super();
@@ -7,7 +6,6 @@ class Topnav extends HTMLElement {
 
   connectedCallback() {
     this.render();
-    console.log("topnav connected !");
   }
 
   render() {
@@ -55,14 +53,14 @@ class Topnav extends HTMLElement {
     </div>
     <nav class="topnav container">
       <ul id="topnav" aria-expanded="false" data-state="close">
-        <li class="links"><a href="/">home</a></li>
-        <li class="links">
-          <a href="https://github.com/irvancolz" target="_blank"
-            >about us</a
-          >
-        </li>
+        <custom-links text="home" href="/"></custom-links>
+        <custom-links 
+          text="about us"
+          href="https://github.com/irvancolz"
+          target="_blank">
+        </custom-links>
         <custom-links text="resto" href="#"></custom-links>
-        <li class="links"><a href="#">favourite</a></li>
+        <custom-links text="favourite" href="#"></custom-links>
       </ul>
     </nav>
   </header>`;
@@ -111,17 +109,17 @@ class Topnav extends HTMLElement {
     .topnav ul[data-state="open"]{
       height: fit-content;
     }
-    .topnav .links {
+    .topnav custom-links {
       background-color: var(--dark-text-col);
       transition: all 0.3s cubic-bezier(0.1, 0.33, 0.75, 0.85);
     }
-    .topnav ul[data-state="close"] .links {
+    .topnav ul[data-state="close"] custom-links {
       transform: translateX(100%);
     }
-    .topnav ul[data-state="open"] .links {
+    .topnav ul[data-state="open"] custom-links {
       transform: translateX(0%);
     }
-    .topnav .links:hover {
+    .topnav custom-links:hover {
       background-color: #fff;
     }
     .header__menu__btn .bar {
@@ -153,10 +151,7 @@ class Topnav extends HTMLElement {
       .header__logo{
         flex-grow: 0;
       }
-      .topnav .links a{
-        padding: .5rem;
-      }
-      .topnav .links {
+      .topnav custom-links {
         transform: translateX(0);
         transition-delay: 0ms;
       }
@@ -178,14 +173,14 @@ class Topnav extends HTMLElement {
         overflow: visible;
       }
     
-      .topnav .links:hover {
+      .topnav custom-links:hover {
         background-color: var(--dark-bg-col);
       }
-      .topnav ul[data-state="close"] .links {
+      .topnav ul[data-state="close"] custom-links {
         transform: translateX(0);
       }
     }  
-    `
+    `;
     this._shadowRoot.append(style);
   }
 }
