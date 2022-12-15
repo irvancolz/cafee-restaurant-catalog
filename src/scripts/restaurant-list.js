@@ -4,9 +4,9 @@ const restaurantListContainer = document.getElementById("restaurant-list");
 const restaurantList = restaurantsData.restaurants;
 
 restaurantList.forEach((res) => {
-    const restaurant = document.createElement("article");
-    restaurant.classList.add("restaurants");
-    restaurant.innerHTML = createRestaurantCards(res)
+  const restaurant = document.createElement("article");
+  restaurant.classList.add("restaurants");
+  restaurant.innerHTML = createRestaurantCards(res);
   restaurantListContainer.append(restaurant);
 });
 
