@@ -3,7 +3,7 @@
         "browser": true,
         "es2021": true
     },
-    "extends": "airbnb-base",
+    "extends": "standard",
     "overrides": [
     ],
     "parserOptions": {
@@ -11,6 +11,10 @@
         "sourceType": "module"
     },
     "rules": {
+        "quotes": "off",
+        "semi" : "off",
+        "space-before-function-paren" : "off",
         "linebreak-style": 0
+
     }
 }
