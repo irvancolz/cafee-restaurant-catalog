@@ -12,3 +12,4 @@ import "./restaurant-list";
 import "./topnav-links";
 import "./hotspot";
 import "./footer";
+import "./components/footer/index";
