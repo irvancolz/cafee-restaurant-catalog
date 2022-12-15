@@ -27,7 +27,6 @@ class Links extends HTMLElement {
       list-style: none;
     }  
     .links {
-      font-size: 1rem;
       transition: background-color 0.2s ease-in;
     }
     .links a {
@@ -36,7 +35,6 @@ class Links extends HTMLElement {
       display: block;
       margin: auto;
       text-transform: capitalize;
-      font-size: var(--nav-link-size);
       position: relative;
       color: var(--normal-text-col);
     }

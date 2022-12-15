@@ -18,7 +18,7 @@ class FooterElement extends HTMLElement {
         class="footer__logo"
       />
       <h2 class="newsletter__title">Subscribe To Our Newsletter</h2>
-      <form class="newsletter__subscription" action="">
+      <form class="newsletter__subscription" >
         <div class="input">
           <label for="email"> Your Email</label>
           <input
@@ -155,7 +155,7 @@ class FooterElement extends HTMLElement {
         width: 100%;
       }
       .newsletter__subscription input {
-        background-color: var(--dark-text-col);
+        background-color: transparent;
         border: none;
         border-bottom: 3px solid var(--normal-text-col);
         outline: none;
@@ -252,6 +252,16 @@ class FooterElement extends HTMLElement {
         }
       }`;
     this._shadowRoot.append(style);
+    this._shadowRoot
+      .querySelector(".newsletter__subscription")
+      .addEventListener("submit", (e) => {
+        e.preventDefault();
+      });
+    this._shadowRoot
+      .querySelector(".newsletter__submit")
+      .addEventListener("click", (e) => {
+        e.preventDefault();
+      });
   }
 }
 
