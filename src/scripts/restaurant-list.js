@@ -1,14 +1,7 @@
-import restaurantsData from "./DATA.json";
+import restaurantsData from './DATA.json';
 
-const restaurantListContainer = document.getElementById("restaurant-list");
+const restaurantListContainer = document.getElementById('restaurant-list');
 const restaurantList = restaurantsData.restaurants;
-
-restaurantList.forEach((res) => {
-  const restaurant = document.createElement("article");
-  restaurant.classList.add("restaurants");
-  restaurant.innerHTML = createRestaurantCards(res);
-  restaurantListContainer.append(restaurant);
-});
 
 function createRestaurantCards(data) {
   return `
@@ -47,5 +40,12 @@ function createRestaurantCards(data) {
     </section>
   `;
 }
+
+restaurantList.forEach((res) => {
+  const restaurant = document.createElement('article');
+  restaurant.classList.add('restaurants');
+  restaurant.innerHTML = createRestaurantCards(res);
+  restaurantListContainer.append(restaurant);
+});
 
 export default createRestaurantCards;

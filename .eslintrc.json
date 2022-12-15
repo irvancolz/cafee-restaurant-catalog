@@ -13,6 +13,8 @@
     "rules": {
         "quotes": "off",
         "semi" : "off",
-        "space-before-function-paren" : "off"
+        "space-before-function-paren" : "off",
+        "linebreak-style": 0
+
     }
 }
