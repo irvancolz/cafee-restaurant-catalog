@@ -10,7 +10,6 @@ class FooterElement extends HTMLElement {
   }
 
   render() {
-    // this._shadowRoot.innerHTML = `<h1>Custom footer<h1>`
     this._shadowRoot.innerHTML = `
     <style>
     * {
@@ -208,6 +207,22 @@ class FooterElement extends HTMLElement {
         margin-top: 50px;
         text-align: start;
         font-size: 1rem;
+      }
+      .links a::after {
+        content: "";
+        position: absolute;
+        bottom: -0.5rem;
+        left: 0;
+        width: 0;
+        height: 5px;
+        background-color: var(--gold-bg-col);
+        transition: width 0.2s ease-in;
+      }
+      .links:hover a {
+        color: var(--gold-bg-col);
+      }
+      .links:hover a::after {
+        width: 100%;
       }
     }    
     </style>
