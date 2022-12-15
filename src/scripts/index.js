@@ -13,3 +13,4 @@ import "./topnav-links";
 import "./hotspot";
 import "./footer";
 import "./components/footer/index";
+import "./components/topnav/index";

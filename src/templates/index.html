@@ -6,68 +6,16 @@
     <title>Restaurant Apps Starter Project</title>
   </head>
   <body>
-    <a href="#hotspots" class="skip-content">skip to content</a>
+    <a href="#content" class="skip-content">skip to content</a>
     <div class="wrapper">
-      <header class="header">
-        <div class="header__logo__container container">
-          <a href="/" class="header__logo">
-            <img src="./images/Cafee-logo.png" alt="Cafee-logo" />
-          </a>
-          <button
-            aria-label="menu button"
-            class="header__menu__btn"
-            title="menu"
-            aria-controls="topnav"
-            data-state="close"
-          >
-            <svg viewbox="0 0 44 44">
-              <rect
-                class="bar one"
-                height="3"
-                width="36"
-                x="4"
-                y="10"
-                rx="5"
-              ></rect>
-              <rect
-                class="bar two"
-                height="3"
-                width="36"
-                x="4"
-                y="20"
-                rx="5"
-              ></rect>
-              <rect
-                class="bar three"
-                height="3"
-                width="36"
-                x="4"
-                y="30"
-                rx="5"
-              ></rect>
-            </svg>
-          </button>
-        </div>
-        <nav class="topnav container">
-          <ul id="topnav" aria-expanded="false" data-state="close">
-            <li class="links"><a href="/">home</a></li>
-            <li class="links">
-              <a href="https://github.com/irvancolz" target="_blank"
-                >about us</a
-              >
-            </li>
-            <li class="links"><a href="#">resto</a></li>
-            <li class="links"><a href="#">favourite</a></li>
-          </ul>
-        </nav>
-      </header>
-      <main id="content">
+      <custom-topnav></custom-topnav>
+      <main id="main">
         <div class="hero">
           <h1 class="hero__text">
             Look no further for interesting restaurants
           </h1>
         </div>
-        <section id="hotspots" class="hotspots container">
+        <section id="content" class="hotspots container">
           <div class="hotspots__title__container">
             <h2 class="hotspots__title">
               Check out this week's
