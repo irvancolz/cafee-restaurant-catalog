@@ -52,7 +52,7 @@ class Topnav extends HTMLElement {
       </button>
     </div>
     <nav class="topnav container">
-      <ul id="topnav" aria-expanded="false" data-state="close">
+      <ul id="topnav" aria-expanded="false">
         <custom-links text="home" href="/"></custom-links>
         <custom-links 
           text="about us"
@@ -66,6 +66,11 @@ class Topnav extends HTMLElement {
   </header>`;
     const style = document.createElement("style");
     style.textContent = `
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }  
     .header {
       color: var(--normal-text-col);
       position: sticky;
@@ -96,6 +101,7 @@ class Topnav extends HTMLElement {
     }
     .topnav {
       position: absolute;
+      width: 100%;
     }
     .topnav ul {
       list-style: none;
@@ -103,20 +109,22 @@ class Topnav extends HTMLElement {
       flex-direction: column;
       overflow-x: hidden;
     }
-    .topnav ul[data-state="close"]{
+    .topnav ul[aria-expanded="false"]{
       height: 0;
     }
-    .topnav ul[data-state="open"]{
+    .topnav ul[aria-expanded="true"]{
       height: fit-content;
     }
     .topnav custom-links {
+      flex-grow: 1;
+      font-size: var(--nav-link-size);
       background-color: var(--dark-text-col);
       transition: all 0.3s cubic-bezier(0.1, 0.33, 0.75, 0.85);
     }
-    .topnav ul[data-state="close"] custom-links {
+    .topnav ul[aria-expanded="false"] custom-links {
       transform: translateX(100%);
     }
-    .topnav ul[data-state="open"] custom-links {
+    .topnav ul[daria-expanded="true"] custom-links {
       transform: translateX(0%);
     }
     .topnav custom-links:hover {
@@ -127,18 +135,18 @@ class Topnav extends HTMLElement {
       transition: y 0.3s ease-out, rotate 0.2s ease-in-out 0.3s, opacity .2s ease-out .1s, translate .2s ease-out;
       transform-origin: center;
     }
-    .header__menu__btn[data-state="open"] .one {
+    .header__menu__btn[aria-expanded="true"] .one {
       transition: rotate 0.2s ease-in-out, y 0.3s ease-out 0.2s;
       y: 20;
       rotate: 45deg;
     }
-    .header__menu__btn[data-state="open"] .three {
+    .header__menu__btn[aria-expanded="true"] .three {
       transition: rotate 0.2s ease-in-out, y 0.3s ease-out 0.2s;
       y: 20;
       rotate: -45deg;
     }
     
-    .header__menu__btn[data-state="open"] .two{
+    .header__menu__btn[aria-expanded="true"] .two{
         opacity: 0;
     }
     
@@ -176,12 +184,27 @@ class Topnav extends HTMLElement {
       .topnav custom-links:hover {
         background-color: var(--dark-bg-col);
       }
-      .topnav ul[data-state="close"] custom-links {
+      .topnav ul[aria-expanded="false"] custom-links {
         transform: translateX(0);
       }
     }  
     `;
     this._shadowRoot.append(style);
+
+    const menuBtn = this._shadowRoot.querySelector(".header__menu__btn");
+    menuBtn.addEventListener("click", (e) => {
+      const topnav = this._shadowRoot.getElementById("topnav");
+      const isOpen = topnav.getAttribute("aria-expanded");
+      if (isOpen === "true") {
+        menuBtn.setAttribute("data-state", "close");
+        topnav.setAttribute("aria-expanded", "false");
+        topnav.setAttribute("aria-hidden", "true");
+      } else {
+        menuBtn.setAttribute("data-state", "open");
+        topnav.setAttribute("aria-expanded", "true");
+        topnav.setAttribute("aria-hidden", "false");
+      }
+    });
   }
 }
 
