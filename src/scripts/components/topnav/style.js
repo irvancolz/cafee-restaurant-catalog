@@ -4,6 +4,11 @@ const topnavStyle = `
   padding: 0;
   box-sizing: border-box;
 }  
+.container{
+  max-width: 1600px;
+  width: 100%;
+  margin: auto;
+}
 .header {
   color: var(--normal-text-col);
   position: sticky;
@@ -51,7 +56,6 @@ const topnavStyle = `
 .topnav custom-links {
   flex-grow: 1;
   font-size: var(--nav-link-size);
-  background-color: var(--dark-text-col);
   transition: all 0.3s cubic-bezier(0.1, 0.33, 0.75, 0.85);
 }
 .topnav ul[aria-expanded="false"] custom-links {
@@ -116,6 +120,9 @@ const topnavStyle = `
 
   .topnav custom-links:hover {
     background-color: var(--dark-bg-col);
+  }
+  .topnav ul[aria-expanded="false"]{
+    height: fit-content;
   }
   .topnav ul[aria-expanded="false"] custom-links {
     transform: translateX(0);

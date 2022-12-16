@@ -28,7 +28,6 @@ class Topnav extends HTMLElement {
 
   render() {
     this._shadowRoot.innerHTML = `
-
     <header class="header">
     <div class="header__logo__container container">
       <a href="/" class="header__logo">
@@ -91,15 +90,12 @@ class Topnav extends HTMLElement {
       this._toggleNav(menuBtn);
     });
 
-    // const links = this._shadowRoot.querySelectorAll("custom-links");
-    // links.forEach((link) => {
-    //   if (link.getAttribute("text") !== "about us") {
-    //     link.addEventListener("click", (e) => {
-    //       routeTo(e);
-    //       this._toggleNav(menuBtn);
-    //     });
-    //   }
-    // });
+    const links = this._shadowRoot.querySelectorAll("custom-links");
+    links.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        this._toggleNav(menuBtn);
+      });
+    });
   }
 }
 
