@@ -14,7 +14,7 @@
         "quotes": "off",
         "semi" : "off",
         "space-before-function-paren" : "off",
-        "linebreak-style": 0
-
+        "linebreak-style": 0,
+        "comma-dangle": "off"
     }
 }

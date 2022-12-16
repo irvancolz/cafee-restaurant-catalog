@@ -7,7 +7,8 @@
     "dev": "webpack-dev-server --config webpack.dev.js --open",
     "build": "webpack --config webpack.prod.js",
     "test": "karma start",
-    "lint" : "eslint ./src/scripts"
+    "lint": "eslint ./src/scripts",
+    "sw": "workbox generateSW workbox-config.js"
   },
   "keywords": [],
   "author": "your_name <your.email@domain.com>",
@@ -37,7 +38,8 @@
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.9.2",
     "webpack-merge": "^5.8.0",
-    "whatwg-fetch": "^3.6.2"
+    "whatwg-fetch": "^3.6.2",
+    "workbox-webpack-plugin": "^6.5.4"
   },
   "dependencies": {
     "regenerator-runtime": "^0.13.9"
