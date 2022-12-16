@@ -10,6 +10,20 @@ class Topnav extends HTMLElement {
     this.render();
   }
 
+  _toggleNav(btn) {
+    const topnav = this._shadowRoot.getElementById("topnav");
+    const isOpen = topnav.getAttribute("aria-expanded");
+    if (isOpen === "true") {
+      btn.setAttribute("data-state", "close");
+      topnav.setAttribute("aria-expanded", "false");
+      topnav.setAttribute("aria-hidden", "true");
+    } else {
+      btn.setAttribute("data-state", "open");
+      topnav.setAttribute("aria-expanded", "true");
+      topnav.setAttribute("aria-hidden", "false");
+    }
+  }
+
   render() {
     this._shadowRoot.innerHTML = `
 
@@ -195,17 +209,7 @@ class Topnav extends HTMLElement {
 
     const menuBtn = this._shadowRoot.querySelector(".header__menu__btn");
     menuBtn.addEventListener("click", (e) => {
-      const topnav = this._shadowRoot.getElementById("topnav");
-      const isOpen = topnav.getAttribute("aria-expanded");
-      if (isOpen === "true") {
-        menuBtn.setAttribute("data-state", "close");
-        topnav.setAttribute("aria-expanded", "false");
-        topnav.setAttribute("aria-hidden", "true");
-      } else {
-        menuBtn.setAttribute("data-state", "open");
-        topnav.setAttribute("aria-expanded", "true");
-        topnav.setAttribute("aria-hidden", "false");
-      }
+      this._toggleNav(menuBtn);
     });
 
     const links = this._shadowRoot.querySelectorAll("custom-links");
@@ -213,6 +217,7 @@ class Topnav extends HTMLElement {
       if (link.getAttribute("text") !== "about us") {
         link.addEventListener("click", (e) => {
           routeTo(e);
+          this._toggleNav(menuBtn);
         });
       }
     });

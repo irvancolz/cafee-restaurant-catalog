@@ -15,3 +15,8 @@ import "./footer";
 import "./components/footer/index";
 import "./components/topnav/index";
 import "./components/links/index";
+import { handleRouting } from "./routing/router";
+
+window.addEventListener("load", () => {
+  handleRouting();
+});

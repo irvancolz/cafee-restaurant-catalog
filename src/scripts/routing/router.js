@@ -1,3 +1,4 @@
+import Favourite from "../pages/favourite";
 import Home from "../pages/home";
 import Resto from "../pages/resto";
 
@@ -9,13 +10,16 @@ const routeTo = (event) => {
 };
 
 const routes = {
-  "/": Home,
-  "/resto": Resto,
+  "/": Home || null,
+  "/resto": Resto || null,
+  "/favourite": Favourite || null,
 };
 
 async function handleRouting() {
   const path = window.location.pathname;
-  console.log(path);
+  const route = routes[path] || Home;
+  const markup = await route.render();
+  document.getElementById('main').innerHTML = markup;
 }
 
 export { routeTo, handleRouting, routes };

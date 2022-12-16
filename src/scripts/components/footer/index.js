@@ -59,8 +59,8 @@ class FooterElement extends HTMLElement {
           href="https://github.com/irvancolz"
           target="_blank">
         </custom-links>
-        <custom-links text="resto" href="#"></custom-links>
-        <custom-links text="favourite" href="#"></custom-links>
+        <custom-links text="resto" href="resto"></custom-links>
+        <custom-links text="favourite" href="favourite"></custom-links>
         </ul>
       </nav>
     </div>
