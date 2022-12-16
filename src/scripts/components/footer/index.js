@@ -1,3 +1,5 @@
+import { routeTo } from "../../routing/router";
+
 class FooterElement extends HTMLElement {
   constructor() {
     super();
@@ -262,6 +264,14 @@ class FooterElement extends HTMLElement {
       .addEventListener("click", (e) => {
         e.preventDefault();
       });
+    const links = this._shadowRoot.querySelectorAll("custom-links");
+    links.forEach((link, i) => {
+      if (link.getAttribute("text") !== "about us") {
+        link.addEventListener("click", (e) => {
+          routeTo(e);
+        });
+      }
+    });
   }
 }
 

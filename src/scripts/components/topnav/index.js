@@ -209,7 +209,7 @@ class Topnav extends HTMLElement {
     });
 
     const links = this._shadowRoot.querySelectorAll("custom-links");
-    links.forEach((link, i) => {
+    links.forEach((link) => {
       if (link.getAttribute("text") !== "about us") {
         link.addEventListener("click", (e) => {
           routeTo(e);
