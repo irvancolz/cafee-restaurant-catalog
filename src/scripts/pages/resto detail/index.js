@@ -1,6 +1,6 @@
 import GetRestaurant from "../../api/apicall";
 
-const Resto = {
+const RestoDetail = {
   async render() {
     return `<h1>Resto pages</h1>`;
   },
@@ -9,4 +9,4 @@ const Resto = {
   },
 };
 
-export default Resto;
+export default RestoDetail;

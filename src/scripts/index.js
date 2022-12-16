@@ -15,8 +15,14 @@ import "./footer";
 import "./components/footer/index";
 import "./components/topnav/index";
 import "./components/links/index";
-import { handleRouting } from "./routing/router";
+import App from "./app";
+
+const app = new App({ content: document.querySelector("#main") });
 
 window.addEventListener("load", () => {
-  handleRouting();
+  app.renderPage();
+});
+
+window.addEventListener("hashchange", () => {
+  app.renderPage();
 });
