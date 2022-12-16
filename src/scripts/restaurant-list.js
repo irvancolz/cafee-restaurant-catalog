@@ -1,7 +1,7 @@
-import restaurantsData from './DATA.json';
+// import restaurantsData from './DATA.json';
 
-const restaurantListContainer = document.getElementById('restaurant-list');
-const restaurantList = restaurantsData.restaurants;
+// const restaurantListContainer = document.getElementById('restaurant-list');
+// const restaurantList = restaurantsData.restaurants;
 
 function createRestaurantCards(data) {
   return `
@@ -41,11 +41,11 @@ function createRestaurantCards(data) {
   `;
 }
 
-restaurantList.forEach((res) => {
-  const restaurant = document.createElement('article');
-  restaurant.classList.add('restaurants');
-  restaurant.innerHTML = createRestaurantCards(res);
-  restaurantListContainer.append(restaurant);
-});
+// restaurantList.forEach((res) => {
+//   const restaurant = document.createElement('article');
+//   restaurant.classList.add('restaurants');
+//   restaurant.innerHTML = createRestaurantCards(res);
+//   restaurantListContainer.append(restaurant);
+// });
 
 export default createRestaurantCards;

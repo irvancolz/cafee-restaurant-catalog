@@ -1,3 +1,5 @@
+import { routeTo } from "../../routing/router";
+
 class Topnav extends HTMLElement {
   constructor() {
     super();
@@ -6,6 +8,20 @@ class Topnav extends HTMLElement {
 
   connectedCallback() {
     this.render();
+  }
+
+  _toggleNav(btn) {
+    const topnav = this._shadowRoot.getElementById("topnav");
+    const isOpen = topnav.getAttribute("aria-expanded");
+    if (isOpen === "true") {
+      btn.setAttribute("data-state", "close");
+      topnav.setAttribute("aria-expanded", "false");
+      topnav.setAttribute("aria-hidden", "true");
+    } else {
+      btn.setAttribute("data-state", "open");
+      topnav.setAttribute("aria-expanded", "true");
+      topnav.setAttribute("aria-hidden", "false");
+    }
   }
 
   render() {
@@ -59,8 +75,8 @@ class Topnav extends HTMLElement {
           href="https://github.com/irvancolz"
           target="_blank">
         </custom-links>
-        <custom-links text="resto" href="#"></custom-links>
-        <custom-links text="favourite" href="#"></custom-links>
+        <custom-links text="resto" href="/resto"></custom-links>
+        <custom-links text="favourite" href="/favourite"></custom-links>
       </ul>
     </nav>
   </header>`;
@@ -193,16 +209,16 @@ class Topnav extends HTMLElement {
 
     const menuBtn = this._shadowRoot.querySelector(".header__menu__btn");
     menuBtn.addEventListener("click", (e) => {
-      const topnav = this._shadowRoot.getElementById("topnav");
-      const isOpen = topnav.getAttribute("aria-expanded");
-      if (isOpen === "true") {
-        menuBtn.setAttribute("data-state", "close");
-        topnav.setAttribute("aria-expanded", "false");
-        topnav.setAttribute("aria-hidden", "true");
-      } else {
-        menuBtn.setAttribute("data-state", "open");
-        topnav.setAttribute("aria-expanded", "true");
-        topnav.setAttribute("aria-hidden", "false");
+      this._toggleNav(menuBtn);
+    });
+
+    const links = this._shadowRoot.querySelectorAll("custom-links");
+    links.forEach((link) => {
+      if (link.getAttribute("text") !== "about us") {
+        link.addEventListener("click", (e) => {
+          routeTo(e);
+          this._toggleNav(menuBtn);
+        });
       }
     });
   }
