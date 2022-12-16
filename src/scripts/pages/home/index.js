@@ -1,3 +1,5 @@
+import GetRestaurant from "../../api/apicall";
+
 const Home = {
   async render() {
     return `
@@ -19,6 +21,11 @@ const Home = {
     <div class="resturant-list__container" id="restaurant-list"></div>
   </section>   
     `;
+  },
+
+  async afterRender() {
+    const res = await GetRestaurant.list();
+    console.log(res);
   },
 };
 
