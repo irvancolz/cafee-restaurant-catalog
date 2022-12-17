@@ -11,7 +11,7 @@ function createRestaurantCards(data) {
           <h3 class="restaurants__title">
             <a href="#/resto/${data.id}">
               ${data.name}
-            <a/>
+            </a>
           </h3>
           <p class="restaurants__subtitle">
             ${data.city}

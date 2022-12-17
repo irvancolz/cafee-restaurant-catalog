@@ -11,7 +11,7 @@
   transition: 0.5s ease-out;
 }
 .restaurants__content {
-  padding: .5rem;
+  padding: 0.5rem;
 }
 .restaurants__header {
   display: flex;
@@ -26,6 +26,9 @@
   line-height: 1;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+.restaurants__title a {
+  padding: 0.5rem;
 }
 .restaurants__subtitle {
   font-family: var(--open-family);
@@ -83,11 +86,11 @@
   .restaurants__header {
     flex-direction: column;
   }
-  .restaurants__content{
-    padding: .1rem;
+  .restaurants__content {
+    padding: 0.1rem;
   }
-  .restaurants__title{
-  height: 2em;
+  .restaurants__title {
+    height: 2em;
   }
 }
 

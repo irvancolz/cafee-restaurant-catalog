@@ -7,6 +7,7 @@ import "../styles/restaurants.css";
 import "../styles/restaurant-list.css";
 import "../styles/footer.css";
 import "../styles/link.css";
+import "../styles/title.css";
 import "./menu";
 import "./restaurant-list";
 import "./topnav-links";
