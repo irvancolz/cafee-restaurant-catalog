@@ -80,6 +80,9 @@ button{
   border: 1px solid var(--black-bg-col);
   outline: 1px solid var(--black-bg-col);
 }
+#main{
+  min-height: calc(100vh - var(--scroll-padding-space));
+}
 /* tablet size  */
 
 @media (min-width: 900px) {

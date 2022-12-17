@@ -3,7 +3,9 @@ import createRestaurantCards from "../../helper/restaurant";
 
 const Resto = {
   async render() {
-    return `<section class="restaurant-list container" id="content">
+    return `
+    <custom-carousel></custom-carousel>
+    <section class="restaurant-list container" id="content">
     <h1 class="restaurant-list__title title">places you might be <span>interested</span> in</h1>
     <div class="resturant-list__container" id="restaurant-list"></div>
   </section>`;
@@ -12,6 +14,7 @@ const Resto = {
   async afterRender() {
     const res = await GetRestaurant.filterRestaurantWithRating(4.6);
     this._createRestaurantListContent(res);
+    this._createCarouselContent(res);
   },
 
   _createRestaurantListContent(list) {
@@ -22,7 +25,12 @@ const Resto = {
       restaurant.innerHTML = createRestaurantCards(resto);
       restaurantListContainer.append(restaurant);
     });
-  }
+  },
+
+  _createCarouselContent(list) {
+    const carousel = document.querySelector("custom-carousel");
+    carousel.restaurantList = list;
+  },
 };
 
 export default Resto;
