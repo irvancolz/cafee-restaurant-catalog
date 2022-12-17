@@ -11,14 +11,14 @@ const Home = {
   </div>
   <section id="content" class="hotspots container">
     <div class="hotspots__title__container">
-      <h2 class="hotspots__title">
+      <h2 class="hotspots__title title">
         Check out this week's
         <span> hotspots </span>
       </h2>
     </div>
   </section>
   <section class="restaurant-list container">
-    <h2 class="restaurant-list__title">places you might have liked</h2>
+    <h2 class="restaurant-list__title title">places you might have liked</h2>
     <div class="resturant-list__container" id="restaurant-list"></div>
   </section>   
     `;
