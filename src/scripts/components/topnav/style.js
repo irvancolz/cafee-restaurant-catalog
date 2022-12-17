@@ -3,7 +3,13 @@ const topnavStyle = `
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}  
+}
+:host{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+} 
 .container{
   max-width: 1600px;
   width: 100%;
@@ -17,7 +23,6 @@ const topnavStyle = `
   z-index: 99;
 }
 .header__logo__container {
-  background-color: var(--dark-text-col);
   padding-block: var(--topnav-padding);
   padding-inline: 40px;
   display: flex;
@@ -90,8 +95,7 @@ const topnavStyle = `
 @media (min-width: 1200px) {
   .header,
   .topnav {
-    position: static;
-    background-color: var(--dark-text-col);
+    background-color: transparent;
   }
   .header__logo{
     flex-grow: 0;
@@ -99,6 +103,7 @@ const topnavStyle = `
   .topnav custom-links {
     transform: translateX(0);
     transition-delay: 0ms;
+    flex-grow: 0;
   }
   .header__logo__container {
     padding: 60px 0 0;
@@ -110,6 +115,8 @@ const topnavStyle = `
   .topnav {
     height: fit-content;
     padding: 1rem 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
   .topnav ul {
     flex-direction: row;
@@ -117,7 +124,6 @@ const topnavStyle = `
     justify-content: center;
     overflow: visible;
   }
-
   .topnav custom-links:hover {
     background-color: var(--dark-bg-col);
   }
