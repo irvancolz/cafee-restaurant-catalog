@@ -1,14 +1,18 @@
 function createRestaurantCards(data) {
   return `
       <img
-        src="${data.pictureId}"
+        src="https://restaurant-api.dicoding.dev/images/medium/${data.pictureId}"
         alt="${data.name} restaurants images"
         loading="lazy"
         title="${data.name} restaurants"
       />
       <section class="restaurants__content">
         <div class="restaurants__header">
-          <h3 class="restaurants__title">${data.name}</h3>
+          <h3 class="restaurants__title">
+            <a href="#/resto/${data.id}">
+              ${data.name}
+            </a>
+          </h3>
           <p class="restaurants__subtitle">
             ${data.city}
             <span>${data.rating}</span>

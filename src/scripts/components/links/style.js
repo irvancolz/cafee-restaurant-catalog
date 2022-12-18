@@ -11,7 +11,6 @@ const linksStyle = ` * {
     list-style: none;
   }  
   .links {
-    background-color: var(--dark-text-col);
     transition: background-color 0.2s ease-in;
   }
   .links a {
@@ -42,9 +41,12 @@ const linksStyle = ` * {
     width: 100%;
   }
   @media (min-width: 1200px) {
-    .links {
+    :host{
       flex-grow: 0;
+    }
+    .links {
       padding: 0;
+      width: fit-content;
     }
     .links a {
       font-size: 1.5rem;

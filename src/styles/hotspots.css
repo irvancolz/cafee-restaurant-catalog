@@ -1,22 +1,7 @@
 .hotspots {
   padding-block: 40px 50px;
 }
-.hotspots__title {
-  font-size: var(--section-title-size);
-  font-family: var(--cormorant-family);
-  margin: 0 auto 40px;
-  text-transform: capitalize;
-  text-align: center;
-  text-shadow: 4px 2px var(--shadow-col);
-}
-.hotspots__title span {
-  position: relative;
-  background-image: url("../public/images/Vector\ 1.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  z-index: -1;
-}
+
 @media (min-width: 600px) {
   .hotspots {
     padding: 60px 0 180px ;

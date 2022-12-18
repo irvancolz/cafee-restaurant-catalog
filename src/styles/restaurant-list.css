@@ -1,16 +1,6 @@
 .restaurant-list {
-  padding-bottom: 48px;
+  padding-block: 4.75rem;
 }
-.restaurant-list__title {
-  font-size: var(--section-title-size);
-  font-family: var(--cormorant-family);
-  font-weight: 700;
-  text-transform: capitalize;
-  text-align: center;
-  text-shadow: 4px 2px var(--shadow-col);
-  margin: 0 auto 40px;
-}
-
 .resturant-list__container {
   display: grid;
   grid-template-columns: 1;
@@ -25,23 +15,22 @@
 .restaurant-list {
   padding-inline: 2rem;
 }
+.favourite__restaurant__list{
+  background-color: #eee;
+}
+.favourite__restaurant__list .subtitle{
+  margin-bottom: 3rem;
+}
 @media (min-width: 600px) {
   .restaurant-list {
-    padding-bottom: 60px;
+    padding-block: 60px;
   }
   .resturant-list__container {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
-  .restaurant-list__title {
-    width: 8em;
-    margin-bottom: 80px;
-  }
 }
 @media (min-width: 900px) {
-  .restaurant-list__title {
-    width: 70%;
-  }
 
   .resturant-list__container .restaurants img {
     height: 540px;
@@ -55,9 +44,6 @@
   .restaurant-list {
     padding-bottom: 264px;
   }
-  .restaurant-list__title{
-    margin-bottom: 260px;
-  }
   .resturant-list__container {
     grid-template-columns: repeat(3, minmax(350px,400px));
     justify-content: center;
@@ -70,5 +56,9 @@
   }
   .resturant-list__container .restaurants:hover img {
     scale: 1.01;
+  }
+  
+  .favourite__restaurant__list .subtitle{
+    margin-left: 12%;
   }
 }

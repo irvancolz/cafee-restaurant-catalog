@@ -4,6 +4,7 @@
   font-size: 16px;
   --gray-bg-col: #dfdfdf;
   --black-bg-col: #130000;
+  --transparent-white-col : rgba(255, 255, 255, 0.408);
   --normal-text-col: #ffffff;
   --dark-text-col: #000000;
   --title-font-weight: 700;
@@ -80,6 +81,9 @@ button{
   border: 1px solid var(--black-bg-col);
   outline: 1px solid var(--black-bg-col);
 }
+#main{
+  min-height: calc(100vh - var(--scroll-padding-space));
+}
 /* tablet size  */
 
 @media (min-width: 900px) {
@@ -87,7 +91,7 @@ button{
     --scroll-padding-space: 170px;
     --card-desc-size: 1.15rem;
     --card-subtitle-size: 1.5rem;
-    --card-title-size: 2rem;
+    --card-title-size: 2.5rem;
     --section-title-size: 4.5rem;
     --section-subtitle-size: 4rem;
     --topnav-padding: 63px;

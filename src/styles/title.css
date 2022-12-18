@@ -1,0 +1,49 @@
+.restaurant-list__title {
+  font-size: var(--section-title-size);
+  font-family: var(--cormorant-family);
+  font-weight: 700;
+  text-transform: capitalize;
+  text-align: center;
+  text-shadow: 4px 2px var(--shadow-col);
+  margin: 0 auto 40px;
+}
+.title {
+  font-size: var(--section-title-size);
+  font-family: var(--cormorant-family);
+  margin: 0 auto 40px;
+  text-transform: capitalize;
+  text-align: center;
+  text-shadow: 4px 2px var(--shadow-col);
+}
+.title span {
+  position: relative;
+  background-image: url("../public/images/Vector\ 1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  z-index: -1;
+}
+.subtitle {
+  font-size: 3rem;
+  font-family: var(--cormorant-family);
+  font-weight: 900;
+}
+@media (min-width: 1200px) {
+  .subtitle {
+    font-size: 4rem;
+  }
+  .restaurant-list__title {
+    margin-bottom: 260px;
+  }
+}
+@media (min-width: 900px) {
+  .restaurant-list__title {
+    width: 70%;
+  }
+}
+@media (min-width: 600px) {
+  .restaurant-list__title {
+    width: 8em;
+    margin-bottom: 80px;
+  }
+}
