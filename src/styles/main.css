@@ -4,6 +4,7 @@
   font-size: 16px;
   --gray-bg-col: #dfdfdf;
   --black-bg-col: #130000;
+  --transparent-white-col : rgba(255, 255, 255, 0.408);
   --normal-text-col: #ffffff;
   --dark-text-col: #000000;
   --title-font-weight: 700;
