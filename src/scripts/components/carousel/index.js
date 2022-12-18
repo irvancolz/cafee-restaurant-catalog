@@ -9,9 +9,13 @@ class Carousel extends HTMLElement {
 
   connectedCallback() {
     this._slide = 0;
-    this._interval = this.getAttribute("interval") || 2;
+    this._interval = parseInt(this.getAttribute("interval"));
     this.render();
-    // this._changeSlideUpAutomatically();
+    this._changeSlideUpAutomatically();
+  }
+
+  disconnectedCallback() {
+    console.log("component unmounted");
   }
 
   set restaurantList(list) {
@@ -20,10 +24,14 @@ class Carousel extends HTMLElement {
   }
 
   _changeSlideUpAutomatically() {
-    setInterval(() => {
-      this._changeSlide(this._slide + 1);
-      console.log(this._slide);
+    const interval = setInterval(() => {
+      if (this._slide >= this._maxSlide) {
+        this._changeSlide(0);
+      } else {
+        this._changeSlide(this._slide + 1);
+      }
     }, this._interval * 1000);
+    window.addEventListener("hashchange", () => clearInterval(interval));
   }
 
   _changeSlide(number) {
@@ -37,17 +45,20 @@ class Carousel extends HTMLElement {
     return slide;
   }
 
+  _countMaxSlide(array) {
+    return (this._maxSlide = array.length - 1);
+  }
+
   render() {
     this._shadowRoot.innerHTML = `<div class="carousel">
         <div class="carousel__content" id="slides"></div>
         <div class="nav">carousel nav</div>
     </div>`;
-    console.log(this.restaurant);
     const slideContainer = this._shadowRoot.getElementById("slides");
     if (this.restaurant) {
+      this._countMaxSlide(this.restaurant);
       this.restaurant.forEach((data) => {
         const slide = this._createSlide(data);
-        // console.log(slideContainer)
         slideContainer.append(slide);
       });
     }
