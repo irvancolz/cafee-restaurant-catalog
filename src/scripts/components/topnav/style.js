@@ -4,12 +4,10 @@ const topnavStyle = `
   padding: 0;
   box-sizing: border-box;
 }
-:host{
-  position: absolute;
-  width: 100%;
-  left: 0;
-  top: 0;
-} 
+.header,
+.topnav{
+background-color: var(--black-bg-col);
+  }
 .container{
   max-width: 1600px;
   width: 100%;
@@ -93,6 +91,12 @@ const topnavStyle = `
 }
 
 @media (min-width: 1200px) {
+  :host{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+  } 
   .header,
   .topnav {
     background-color: transparent;
