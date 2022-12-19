@@ -5,6 +5,7 @@ const Resto = {
   async render() {
     return `
     <custom-carousel interval="5"></custom-carousel>
+    <custom-slider></custom-slider>
     <section class="restaurant-list container" id="content">
     <h1 class="restaurant-list__title title">places you might be <span>interested</span> in</h1>
     <div class="resturant-list__container" id="restaurant-list"></div>

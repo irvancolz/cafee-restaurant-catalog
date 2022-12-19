@@ -19,10 +19,6 @@ class Carousel extends HTMLElement {
     this.render();
   }
 
-  attributeChangedCallback(attrName, oldVal, newVal) {
-    console.log(attrName);
-  }
-
   _changeSlideUpAutomatically() {
     const interval = setInterval(() => {
       if (this._slide >= this._maxSlide) {
@@ -57,12 +53,15 @@ class Carousel extends HTMLElement {
     const slide = document.createElement("a");
     slide.className = "slide";
     slide.setAttribute("href", `#/resto/${data.id}`);
+    slide.setAttribute("alt", `${data.name} images`);
+    slide.setAttribute("aria-label", `link to resto ${data.name} pages`);
     slide.innerHTML = `<img src="https://restaurant-api.dicoding.dev/images/large/${data.pictureId}" />`;
     return slide;
   }
 
   _createNavigation() {
     const btn = document.createElement("button");
+    btn.setAttribute("aria-label", "change slide");
     btn.className = `carousel__nav__btn`;
     return btn;
   }
@@ -85,7 +84,7 @@ class Carousel extends HTMLElement {
   _addStyle() {
     const style = document.createElement("style");
     style.textContent = carouselStyles;
-    this.shadowRoot.append(style);
+    this._shadowRoot.append(style);
   }
 
   render() {
