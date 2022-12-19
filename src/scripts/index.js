@@ -15,6 +15,7 @@ import "./hotspot";
 import "./footer";
 import "./components/footer/index";
 import "./components/carousel/index";
+import "./components/slider/index";
 import "./components/topnav/index";
 import "./components/links/index";
 import App from "./app";
