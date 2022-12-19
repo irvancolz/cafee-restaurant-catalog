@@ -10,9 +10,7 @@ class Carousel extends HTMLElement {
   connectedCallback() {
     this._changeSlide(0);
     this._interval = parseInt(this.getAttribute("interval"));
-    window.addEventListener("DOMContentLoaded", () => {
-      this.render();
-    });
+    this.render();
     this._changeSlideUpAutomatically();
   }
 
@@ -100,11 +98,12 @@ class Carousel extends HTMLElement {
         <div class="nav__container"></div>
     </div>`;
 
-    this._addStyle();
     if (this.restaurant) {
       this._countMaxSlide(this.restaurant);
       this._createContent();
     }
+
+    this._addStyle();
 
     const navBtn = this._shadowRoot.querySelectorAll(".carousel__nav__btn");
     navBtn.forEach((btn, i) => {

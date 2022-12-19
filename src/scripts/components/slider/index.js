@@ -1,5 +1,6 @@
 /* eslint-disable accessor-pairs */
 import SliderStyles from "./style";
+import createRestaurantCards from "../../helper/restaurant";
 
 class Slider extends HTMLElement {
   constructor() {
@@ -16,7 +17,15 @@ class Slider extends HTMLElement {
     this.render();
   }
 
-  _caddStyles() {
+  _createContent(data) {
+    const restoContainer = this._shadowRoot.querySelector(".slider__content");
+    const restaurant = document.createElement("article");
+    restaurant.classList.add("restaurants");
+    restaurant.innerHTML = createRestaurantCards(data);
+    restoContainer.append(restaurant);
+  }
+
+  _addStyles() {
     const styles = document.createElement("style");
     styles.textContent = SliderStyles;
     this._shadowRoot.append(styles);
@@ -24,12 +33,29 @@ class Slider extends HTMLElement {
 
   render() {
     this._shadowRoot.innerHTML = `<div class="slider__content">
-    <h1>slider</h1>
     <nav>
-        <button>btn nav 1</button>
-        <button>btn nav 2</button>
+        <button 
+          aria-label="next slide" 
+          title="next-slide"
+          >
+          btn nav 1
+        </button>
+        <button 
+          aria-label="next silde" 
+          title="next-slide"
+          >
+          btn nav 2
+        </button>
     </nav>
     </div>`;
+
+    this._addStyles();
+
+    if (this.restaurant) {
+      this.restaurant.forEach((resto) => {
+        this._createContent(resto);
+      });
+    }
   }
 }
 

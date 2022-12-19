@@ -19,7 +19,7 @@ const carouselStyles = `
 .slide:focus{
     z-index: 10;
 }
-.slide, .slide img, .slide__wrapper{
+.slide, .slide__wrapper{
     position: absolute;
     top: 0;
     left: 0;
@@ -27,7 +27,12 @@ const carouselStyles = `
     width: 100%;
 }
 .slide img{
+    position: absolute;
+    top: 0;
+    left: -50%;
+    height: 100%;
     filter: brightness(.8);
+    min-width: 100%;
 }
 .carousel-content{
     position: relative;
@@ -35,11 +40,13 @@ const carouselStyles = `
 .nav__container{
     position: absolute;
     bottom: 1rem;
-    right: 1rem;
+    right: 50%;
+    transform: translateX(50%);
     padding: .5rem;
     border-radius: 5px;
     background-color: var(--transparent-white-col);
     z-index: 15;
+    display: flex;
 }
 .carousel__nav__btn{
     position: relative;
@@ -69,6 +76,12 @@ const carouselStyles = `
     .nav__container{
         display: flex;
         flex-direction: column;
+        right: 1rem;
+        transform: translateX(0);
+    }
+    .slide img{
+        left: 0;
+        transform: translate(0);
     }
 }
 @media(min-width: 1200px){
