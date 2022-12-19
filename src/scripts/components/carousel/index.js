@@ -44,8 +44,8 @@ class Carousel extends HTMLElement {
     const navBtn = this._shadowRoot.querySelectorAll(".carousel__nav__btn");
     for (let i = 0; i <= this._maxSlide; i++) {
       if (i === id) {
-        slides[i].classList.add("active");
-        navBtn[i].classList.add("active");
+        slides[i].className = "slide active";
+        navBtn[i].className = "carousel__nav__btn active";
       } else {
         slides[i].className = "slide";
         navBtn[i].className = "carousel__nav__btn";
@@ -61,7 +61,7 @@ class Carousel extends HTMLElement {
     return slide;
   }
 
-  _createNavigation(data) {
+  _createNavigation() {
     const btn = document.createElement("button");
     btn.className = `carousel__nav__btn`;
     return btn;

@@ -14,8 +14,10 @@ const carouselStyles = `
     transition: opacity .5s ease-in-out;
 }
 .slide:focus, .slide.active{
-    z-index: 10;
     opacity: 1;
+}
+.slide:focus{
+    z-index: 10;
 }
 .slide, .slide img{
     position: absolute;
@@ -45,6 +47,7 @@ const carouselStyles = `
     aspect-ratio: 1;
     background-color: transparent; 
     border: none;
+    cursor: pointer;
 }
 .carousel__nav__btn::after{
     content: "";
