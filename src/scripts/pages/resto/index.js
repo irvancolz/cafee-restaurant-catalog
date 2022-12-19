@@ -1,5 +1,6 @@
 import GetRestaurant from "../../api/apicall";
 import createRestaurantCards from "../../helper/restaurant";
+import Slider from "./slider-controller";
 
 const Resto = {
   async render() {
@@ -22,7 +23,7 @@ const Resto = {
           &larr;
         </button>
         <button 
-          aria-label="next silde" 
+          aria-label="next slide" 
           title="next-slide"
           >
           &rarr;
@@ -48,6 +49,7 @@ const Resto = {
     this._createRestaurantListContent(restaurantSliderContainer, filteredResto);
     this._createRestaurantListContent(restaurantListContainer, filteredResto);
     this._createCarouselContent(filteredResto);
+    Slider.init();
   },
 
   _createRestaurantListContent(container, list) {
