@@ -10,7 +10,9 @@ class Carousel extends HTMLElement {
   connectedCallback() {
     this._changeSlide(0);
     this._interval = parseInt(this.getAttribute("interval"));
-    this.render();
+    window.addEventListener("DOMContentLoaded", () => {
+      this.render();
+    });
     this._changeSlideUpAutomatically();
   }
 
@@ -36,7 +38,7 @@ class Carousel extends HTMLElement {
   }
 
   _createEffect(id) {
-    const slides = this._shadowRoot.querySelectorAll(".slide");
+    const slides = this._shadowRoot.querySelectorAll(".slide__wrapper a");
     const navBtn = this._shadowRoot.querySelectorAll(".carousel__nav__btn");
     for (let i = 0; i <= this._maxSlide; i++) {
       if (i === id) {
@@ -50,12 +52,15 @@ class Carousel extends HTMLElement {
   }
 
   _createSlide(data) {
-    const slide = document.createElement("a");
-    slide.className = "slide";
-    slide.setAttribute("href", `#/resto/${data.id}`);
-    slide.setAttribute("alt", `${data.name} images`);
-    slide.setAttribute("aria-label", `link to resto ${data.name} pages`);
-    slide.innerHTML = `<img src="https://restaurant-api.dicoding.dev/images/large/${data.pictureId}" />`;
+    const slide = document.createElement("li");
+    slide.className = "slide__wrapper";
+    slide.innerHTML = `
+    <a href="#/resto/${data.id}" aria-label="link to resto ${data.name} pages">
+    <img 
+      src="https://restaurant-api.dicoding.dev/images/large/${data.pictureId}" 
+      alt="${data.name} images"/>
+    </a>
+    `;
     return slide;
   }
 
@@ -89,10 +94,13 @@ class Carousel extends HTMLElement {
 
   render() {
     this._shadowRoot.innerHTML = `<div class="carousel">
-        <div class="carousel__content" id="slides"></div>
+        <nav class="carousel__content">
+          <ul  id="slides"></ul>
+        </nav>
         <div class="nav__container"></div>
     </div>`;
 
+    this._addStyle();
     if (this.restaurant) {
       this._countMaxSlide(this.restaurant);
       this._createContent();
@@ -104,8 +112,6 @@ class Carousel extends HTMLElement {
         this._changeSlide(i);
       });
     });
-
-    this._addStyle();
   }
 }
 

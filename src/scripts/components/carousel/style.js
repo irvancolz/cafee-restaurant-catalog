@@ -1,13 +1,13 @@
 const carouselStyles = `
 .carousel{
     position: relative;
-    max-wdth: 100vw;
+    width: 100vw;
     overflow: hidden;
 }
 .carousel__content{
     min-height: 100vh;
 }
-.slide:not(:first-child){
+.slide{
     opacity: 0;
 }
 .slide{
@@ -19,7 +19,7 @@ const carouselStyles = `
 .slide:focus{
     z-index: 10;
 }
-.slide, .slide img{
+.slide, .slide img, .slide__wrapper{
     position: absolute;
     top: 0;
     left: 0;
