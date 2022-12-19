@@ -1,0 +1,60 @@
+.favourite-restaurant__slider {
+  position: relative;
+  overflow: hidden;
+}
+#restaurant-slider{
+    display: flex;
+    gap: 0;
+    width: fit-content;
+    justify-content: flex-start;
+    transform: translateX(0);
+    transition: transform .5s ease-in-out;
+}
+#restaurant-slider .restaurants {
+    width: calc(100vw - 4rem);
+}
+
+.slider__nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+}
+.slider__nav button {
+  background-color: var(--normal-text-col);
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: 900;
+}
+.slider__nav button:active {
+  scale: 0.9;
+  box-shadow: 0px 0px 0px var(--shadow-col);
+}
+.slider__nav button:last-child {
+  box-shadow: -2px 2px 2px var(--shadow-col);
+}
+.slider__nav button:first-child {
+  box-shadow: 2px 2px 2px var(--shadow-col);
+}
+@media (min-width: 600px){
+  #restaurant-slider{
+    gap: .5rem;
+  }  
+  #restaurant-slider .restaurants {
+        width: 400px;
+    }
+}
+@media (min-width: 1200px){
+    #restaurant-slider .restaurants {
+        width: 450px;
+    }
+    #restaurant-slider{
+      gap: 1rem;
+    }
+}

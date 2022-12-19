@@ -9,7 +9,7 @@ function createRestaurantCards(data) {
       <section class="restaurants__content">
         <div class="restaurants__header">
           <h3 class="restaurants__title">
-            <a href="#/resto/${data.id}">
+            <a href="#/resto/${data.id}" aria-label="link to ${data.name} resto pages">
               ${data.name}
             </a>
           </h3>

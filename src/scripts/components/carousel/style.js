@@ -1,23 +1,25 @@
 const carouselStyles = `
 .carousel{
     position: relative;
-    max-wdth: 100vw;
+    width: 100vw;
     overflow: hidden;
 }
 .carousel__content{
     min-height: 100vh;
 }
-.slide:not(:first-child){
+.slide{
     opacity: 0;
 }
 .slide{
     transition: opacity .5s ease-in-out;
 }
 .slide:focus, .slide.active{
-    z-index: 10;
     opacity: 1;
 }
-.slide, .slide img{
+.slide:focus{
+    z-index: 10;
+}
+.slide, .slide__wrapper{
     position: absolute;
     top: 0;
     left: 0;
@@ -25,7 +27,12 @@ const carouselStyles = `
     width: 100%;
 }
 .slide img{
+    position: absolute;
+    top: 0;
+    left: -50%;
+    height: 100%;
     filter: brightness(.8);
+    min-width: 100%;
 }
 .carousel-content{
     position: relative;
@@ -33,11 +40,13 @@ const carouselStyles = `
 .nav__container{
     position: absolute;
     bottom: 1rem;
-    right: 1rem;
+    right: 50%;
+    transform: translateX(50%);
     padding: .5rem;
     border-radius: 5px;
     background-color: var(--transparent-white-col);
     z-index: 15;
+    display: flex;
 }
 .carousel__nav__btn{
     position: relative;
@@ -45,6 +54,7 @@ const carouselStyles = `
     aspect-ratio: 1;
     background-color: transparent; 
     border: none;
+    cursor: pointer;
 }
 .carousel__nav__btn::after{
     content: "";
@@ -66,6 +76,12 @@ const carouselStyles = `
     .nav__container{
         display: flex;
         flex-direction: column;
+        right: 1rem;
+        transform: translateX(0);
+    }
+    .slide img{
+        left: 0;
+        transform: translate(0);
     }
 }
 @media(min-width: 1200px){
