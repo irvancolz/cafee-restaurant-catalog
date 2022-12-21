@@ -16,10 +16,11 @@
 
 .slider__nav {
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 0;
   width: 100%;
-  transform: translateY(-50%);
+  z-index: 10;
+  transform: translateY(100%);
   display: flex;
   justify-content: space-between;
 }
