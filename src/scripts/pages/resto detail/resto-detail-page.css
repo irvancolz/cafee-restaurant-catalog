@@ -1,0 +1,189 @@
+.restaurant-detail__hero {
+  position: relative;
+}
+.restaurant-detail__detail {
+  background-color: var(--normal-text-col);
+  border-radius: 0.3rem;
+  padding: 1.3rem 1.7rem;
+  position: static;
+}
+.content-wrapper{
+    display: grid;
+    gap: 1rem;
+}
+.restaurant-detail__hero__img {
+  width: 100vw;
+}
+.restaurant-detail__article {
+  font-size: var(--resto-detail-article-size);
+  padding: .5rem;
+  display: block;
+  width: 95%;
+  margin-inline: auto;
+  border: 1px solid var(--black-bg-col);
+}
+.restaurant-detail__hero > .restaurant-detail__article {
+  font-family: var(--cormorant-family);
+  color: var(--normal-text-col);
+  padding: 3rem 4rem 6rem;
+  text-align: center;
+  margin-inline: 0;
+  margin-top: auto;
+  flex-basis: 70%;
+  display: none;
+}
+.restaurant-detail__title {
+  font-size: 3rem;
+  font-family: var(--cormorant-family);
+  font-weight: 900;
+}
+.address-wrapper{
+    display: grid;
+    grid-template-areas: 
+    "city city rating"
+    "address address rating"
+    ;
+} 
+.restaurant-detail__rating{
+    grid-area: rating;
+}
+.restaurant-detail__city{
+    grid-area: city;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+.restaurant-detail__adress{
+    grid-area: address;
+}
+.restaurant-detail__rating p{
+    display: inline;
+    font-weight: 900;
+    font-size: 2em;
+}
+.list-item {
+  padding: 0.25rem;
+  border: 1px solid var(--black-bg-col);
+  border-radius: 0.25rem;
+  display: inline;
+  font-size: .85rem;
+}
+.list-item:hover {
+  background-color: var(--gray-bg-col);
+}
+.restaurant-detail__list-title {
+  font-family: var(--cormorant-family);
+  font-size: 2rem;
+}
+.restaurant-detail__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+.restaurant-detail__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+.restaurant-detail__buttons .button {
+  width: 80%;
+  font-size: 1rem;
+  font-family: var(--cormorant-family);
+  font-weight: 700;
+  padding: 0.7rem;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  transition-delay: 0.2s;
+  background-color: var(--normal-text-col);
+}
+.restaurant-detail__buttons .book-btn {
+  color: var(--normal-text-col);
+  background-color: var(--black-bg-col);
+}
+.restaurant-detail__buttons .book-btn:hover {
+  color: var(--gold-bg-col);
+}
+.restaurant-detail__buttons .book-btn::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: -100%;
+  transition: bottom 0.5s ease-in-out;
+  width: 100%;
+  height: 100%;
+  background-color: var(--normal-text-col);
+}
+.restaurant-detail__buttons .book-btn:hover::after {
+  background-color: var(--gold-bg-col);
+  bottom: 100%;
+}
+@media (min-width: 900px) {
+    .restaurant-detail__hero{
+        height: 100vh;
+    }
+  .restaurant-detail__title {
+    font-size: 4.5rem;
+  }
+  .restaurant-detail__city{
+    font-size: 1.5rem;
+  }
+  .restaurant-detail__article{
+    padding: .75rem;
+  }
+  .restaurant-detail__buttons {
+    position: sticky;
+    right: 0px;
+    top: 2rem;
+    z-index: 5;
+  }
+  .list-item {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 1200px) {
+  .restaurant-detail__hero {
+    display: flex;
+  }
+  .restaurant-detail__detail {
+    position: relative;
+    overflow-y: scroll;
+    flex-basis: 25%;
+    height: 75vh;
+    margin-top: auto;
+    transform: translateY(-3rem);
+  }
+  .restaurant-detail__hero__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    filter: brightness(0.7);
+    z-index: -1;
+  }
+  .restaurant-detail__article {
+    display: none;
+    padding: 1.5rem;
+  }
+  .restaurant-detail__hero > .restaurant-detail__article {
+    display: block;
+    background: linear-gradient(
+      180deg,
+      rgba(17, 17, 17, 0.01) -6.18%,
+      rgba(17, 17, 17, 0.384366) 30.46%,
+      rgba(17, 17, 17, 0.54) 30.47%,
+      #111111 100%
+    );
+    border: none;
+  }
+  .restaurant-detail__list-title {
+    margin: 3rem 0 1.25rem;
+  }
+  .restaurant-detail__buttons {
+    top: -0.5rem;
+}
+.restaurant-detail__buttons .button{
+      width: 100%;
+  }
+}
