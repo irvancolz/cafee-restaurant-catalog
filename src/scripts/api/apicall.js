@@ -1,6 +1,6 @@
-import API_ROUTES from "./config";
+import { API_ROUTES } from "./config";
 
-const GetRestaurant = {
+export const GetRestaurant = {
   async list() {
     const url = await fetch(API_ROUTES.list);
     const response = await url.json();
@@ -20,5 +20,3 @@ const GetRestaurant = {
     return resto;
   },
 };
-
-export default GetRestaurant;

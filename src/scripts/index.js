@@ -8,12 +8,6 @@ import "../styles/restaurant-list.css";
 import "../styles/footer.css";
 import "../styles/link.css";
 import "../styles/title.css";
-import "../styles/resto-pages.css";
-import "./menu";
-import "./restaurant-list";
-import "./topnav-links";
-import "./hotspot";
-import "./footer";
 import "./components";
 import App from "./app";
 

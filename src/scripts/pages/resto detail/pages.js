@@ -1,6 +1,6 @@
-import GetRestaurant from "../../api/apicall";
-import UrlParser from "../../routing/urlparser";
-import createRestaurantCards from "../../helper/restaurant";
+import { GetRestaurant } from "../../api";
+import { UrlParser } from "../../routing";
+import { createRestaurantCards } from "../../helper";
 import {
   createContentFromList,
   createRestaurantDetailMainContent,

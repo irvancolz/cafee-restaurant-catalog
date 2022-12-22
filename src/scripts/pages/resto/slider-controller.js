@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-const Slider = {
+export const Slider = {
   init() {
     const slideSpace = document.querySelector(
       ".favourite-restaurant__slider"
@@ -42,5 +42,3 @@ const Slider = {
     }
   },
 };
-
-export default Slider;

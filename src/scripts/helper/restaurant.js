@@ -1,4 +1,4 @@
-function createRestaurantCards(data) {
+export function createRestaurantCards(data) {
   return `
       <img
         src="https://restaurant-api.dicoding.dev/images/medium/${data.pictureId}"
@@ -39,5 +39,3 @@ function createRestaurantCards(data) {
       </section>
     `;
 }
-
-export default createRestaurantCards;
