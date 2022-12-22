@@ -40,8 +40,8 @@
 .address-wrapper{
     display: grid;
     grid-template-areas: 
-    "city city rating"
-    "address address rating"
+    "city city city rating"
+    "address address address rating"
     ;
 } 
 .restaurant-detail__rating{
@@ -84,58 +84,30 @@
   flex-direction: column;
   gap: 0.5rem;
   align-items: center;
-}
-.restaurant-detail__buttons .button {
-  width: 80%;
-  font-size: 1rem;
-  font-family: var(--cormorant-family);
-  font-weight: 700;
-  padding: 0.7rem;
-  border-radius: 10px;
-  position: relative;
-  overflow: hidden;
-  transition-delay: 0.2s;
   background-color: var(--normal-text-col);
-}
-.restaurant-detail__buttons .book-btn {
-  color: var(--normal-text-col);
-  background-color: var(--black-bg-col);
-}
-.restaurant-detail__buttons .book-btn:hover {
-  color: var(--gold-bg-col);
-}
-.restaurant-detail__buttons .book-btn::after {
-  position: absolute;
-  content: "";
-  left: 0;
-  bottom: -100%;
-  transition: bottom 0.5s ease-in-out;
-  width: 100%;
-  height: 100%;
-  background-color: var(--normal-text-col);
-}
-.restaurant-detail__buttons .book-btn:hover::after {
-  background-color: var(--gold-bg-col);
-  bottom: 100%;
 }
 @media (min-width: 900px) {
-    .restaurant-detail__hero{
-        height: 100vh;
-    }
   .restaurant-detail__title {
     font-size: 4.5rem;
+  }
+  .content-wrapper{
+    position: relative;
+  }
+  .content-wrapper > * {
+    width: 50%;
+    margin: 0;
   }
   .restaurant-detail__city{
     font-size: 1.5rem;
   }
   .restaurant-detail__article{
-    padding: .75rem;
+    padding: .75rem; 
   }
-  .restaurant-detail__buttons {
-    position: sticky;
-    right: 0px;
-    top: 2rem;
-    z-index: 5;
+  .restaurant-detail__buttons{
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateY(-5rem);
   }
   .list-item {
     font-size: 1rem;
@@ -144,6 +116,10 @@
 @media (min-width: 1200px) {
   .restaurant-detail__hero {
     display: flex;
+    height: 100vh;
+  }
+  .address-wrapper{
+    width: 100%;
   }
   .restaurant-detail__detail {
     position: relative;
@@ -181,7 +157,10 @@
     margin: 3rem 0 1.25rem;
   }
   .restaurant-detail__buttons {
+    position: sticky;
     top: -0.5rem;
+    width: 100%;
+    transform: translateY(0);
 }
 .restaurant-detail__buttons .button{
       width: 100%;

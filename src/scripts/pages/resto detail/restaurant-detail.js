@@ -34,12 +34,12 @@ function createRestaurantDetailMainContent(data) {
         <div class="restaurant-detail__buttons">
             <button 
               aria-label="book table" 
-              class="button book-btn">
+              class="button book-btn primary-button">
               Book Table
             </button>
             <button 
               aria-label="add this restaurant to favourite" 
-              class="button favourite-btn">
+              class="button favourite-btn outlined-button">
               Add Favourite
             </button>
         </div>
@@ -77,4 +77,17 @@ function createContentFromList(list, container) {
   });
 }
 
-export { createRestaurantDetailMainContent, createContentFromList };
+function createRestoComments(list) {
+  const commetContainer = document.getElementById("customer-review");
+  list.forEach((content) => {
+    const item = document.createElement("custom-comment");
+    item.comment = content;
+    commetContainer.append(item);
+  });
+}
+
+export {
+  createRestaurantDetailMainContent,
+  createContentFromList,
+  createRestoComments,
+};

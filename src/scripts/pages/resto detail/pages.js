@@ -1,18 +1,43 @@
-import GetRestaurant from "../../api/apicall";
-import UrlParser from "../../routing/urlparser";
-import createRestaurantCards from "../../helper/restaurant";
+import { GetRestaurant } from "../../api";
+import { UrlParser } from "../../routing";
+import { createRestaurantCards } from "../../helper";
 import {
   createContentFromList,
   createRestaurantDetailMainContent,
+  createRestoComments,
 } from "./restaurant-detail";
+import cafeeLogoDark from "../../../public/images/Cafee-logo-dark.png";
 
 export const RestoDetail = {
   async render() {
     return `
-    <article class="restaurant-detail__hero" id="content"></article>
-    <section class="restaurant-list favourite__restaurant__list" id="content">
-      <h2 class="subtitle">See another restaurants</h2>
-      <div class="resturant-list__container container" id="restaurant-list"></div>
+    <article 
+      class="restaurant-detail__hero" 
+      id="content">
+    </article>
+    <section class="customer-review container">
+      <h2>customer review</h2>
+      <div id="customer-review" ></div>
+      <form class="customer-review__form">
+        <input 
+          placeholder="Thoughts at this place"
+          aria-label="add your review"
+          title="add your review"
+          type="text"
+          class="customer-review__input" />
+          <button 
+            type="submit" 
+            class="customer-review__submit">
+              Review
+          </button>
+      </form>
+      <img src=${cafeeLogoDark} alt="cafee logo" class="restaurant-detail__review__img"/>
+    </section>
+    <section 
+      class="restaurant-list favourite__restaurant__list" 
+      id="content">
+        <h2 class="subtitle">See another restaurants</h2>
+        <div class="resturant-list__container container" id="restaurant-list"></div>
     </section>`;
   },
   async afterRender() {
@@ -38,6 +63,7 @@ export const RestoDetail = {
     createContentFromList(data.menus.foods, foodContainer);
     createContentFromList(data.menus.drinks, drinksContainer);
     createContentFromList(data.categories, categoriesContainer);
+    createRestoComments(data.customerReviews);
   },
 
   _createRestaurantListContent(list) {

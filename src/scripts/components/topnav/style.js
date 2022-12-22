@@ -1,4 +1,4 @@
-const topnavStyle = `
+export const topnavStyle = `
 * {
   margin: 0;
   padding: 0;
@@ -139,5 +139,3 @@ background-color: var(--black-bg-col);
   }
 }  
 `;
-
-export default topnavStyle;

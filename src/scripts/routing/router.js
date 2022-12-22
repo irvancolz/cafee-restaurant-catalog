@@ -1,14 +1,9 @@
-import Favourite from "../pages/favourite";
-import Home from "../pages/home";
-import Resto from "../pages/resto";
-// import RestoDetail from "../pages/resto detail";
-import { RestoDetail } from "../pages/resto detail";
+import { RestoDetail, Favourite, Home, Resto, NotFound } from "../pages";
 
-const routes = {
+export const routes = {
   "/": Home,
   "/resto": Resto,
   "/favourite": Favourite,
   "/resto/:id": RestoDetail,
+  "*": NotFound,
 };
-
-export { routes };

@@ -1,5 +1,4 @@
-import { routes } from "./routing/router";
-import UrlParser from "./routing/urlparser";
+import { routes, UrlParser } from "./routing";
 
 class App {
   constructor({ content }) {

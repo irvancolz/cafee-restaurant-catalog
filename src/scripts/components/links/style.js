@@ -1,4 +1,4 @@
-const linksStyle = ` * {
+export const linksStyle = ` * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -52,5 +52,3 @@ const linksStyle = ` * {
       font-size: 1.5rem;
     }
   };`;
-
-export default linksStyle;

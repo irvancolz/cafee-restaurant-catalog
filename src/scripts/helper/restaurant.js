@@ -1,4 +1,4 @@
-function createRestaurantCards(data) {
+export function createRestaurantCards(data) {
   return `
       <img
         src="https://restaurant-api.dicoding.dev/images/medium/${data.pictureId}"
@@ -32,12 +32,10 @@ function createRestaurantCards(data) {
             </svg>
           </p>
         </div>
-        <button class="book__btn" data-id=${data.id}>Book Table</button>
+        <button class="book__btn primary-button" data-id=${data.id}>Book Table</button>
         <p class="restaurants__text">
           ${data.description}
         </p>
       </section>
     `;
 }
-
-export default createRestaurantCards;
