@@ -8,6 +8,7 @@ import "../styles/restaurant-list.css";
 import "../styles/footer.css";
 import "../styles/link.css";
 import "../styles/title.css";
+import "../styles/button.css";
 import "./components";
 import App from "./app";
 

@@ -34,12 +34,12 @@ function createRestaurantDetailMainContent(data) {
         <div class="restaurant-detail__buttons">
             <button 
               aria-label="book table" 
-              class="button book-btn">
+              class="button book-btn primary-button">
               Book Table
             </button>
             <button 
               aria-label="add this restaurant to favourite" 
-              class="button favourite-btn">
+              class="button favourite-btn outlined-button">
               Add Favourite
             </button>
         </div>

@@ -86,39 +86,6 @@
   align-items: center;
   background-color: var(--normal-text-col);
 }
-.restaurant-detail__buttons .button {
-  width: 80%;
-  font-size: 1rem;
-  font-family: var(--cormorant-family);
-  font-weight: 700;
-  padding: 0.7rem;
-  border-radius: 10px;
-  position: relative;
-  overflow: hidden;
-  transition-delay: 0.2s;
-  background-color: var(--normal-text-col);
-}
-.restaurant-detail__buttons .book-btn {
-  color: var(--normal-text-col);
-  background-color: var(--black-bg-col);
-}
-.restaurant-detail__buttons .book-btn:hover {
-  color: var(--gold-bg-col);
-}
-.restaurant-detail__buttons .book-btn::after {
-  position: absolute;
-  content: "";
-  left: 0;
-  bottom: -100%;
-  transition: bottom 0.5s ease-in-out;
-  width: 100%;
-  height: 100%;
-  background-color: var(--normal-text-col);
-}
-.restaurant-detail__buttons .book-btn:hover::after {
-  background-color: var(--gold-bg-col);
-  bottom: 100%;
-}
 @media (min-width: 900px) {
   .restaurant-detail__title {
     font-size: 4.5rem;
