@@ -7,6 +7,7 @@ import {
   createRestoComments,
 } from "./restaurant-detail";
 import cafeeLogoDark from "../../../public/images/Cafee-logo-dark.png";
+import { AddReview } from "./addReview";
 
 export const RestoDetail = {
   async render() {
@@ -19,6 +20,8 @@ export const RestoDetail = {
       <h2>customer review</h2>
       <div id="customer-review" ></div>
       <form class="customer-review__form">
+        <h3>Add Your Review</h3>
+        <p>help us become better restaurant</p>
         <input 
           placeholder="Thoughts at this place"
           aria-label="add your review"
@@ -27,7 +30,7 @@ export const RestoDetail = {
           class="customer-review__input" />
           <button 
             type="submit" 
-            class="customer-review__submit">
+            class="customer-review__submit primary-button">
               Review
           </button>
       </form>
@@ -47,6 +50,7 @@ export const RestoDetail = {
     const res = await GetRestaurant.filterRestaurantWithRating(4.8);
     this._createMainContent(data);
     this._createRestaurantListContent(res);
+    AddReview.init();
   },
 
   _createMainContent(data) {

@@ -2,9 +2,9 @@ export const commentStyles = `
 .review__container{
     padding: .75rem 1.5rem;
     background: var(--normal-text-col);
-    width: min(100%, 450px);
     margin-bottom: 1rem;
     border-radius: .25rem;
+    margin-inline: auto;
 }
 .review__container header{
     max-height: 3rem;
@@ -55,6 +55,9 @@ export const commentStyles = `
 @media(min-width: 1200px){
     .review__name{
         font-size: 2rem;
+    }
+    .review__container{
+        width: 450px;
     }
 }
 `;

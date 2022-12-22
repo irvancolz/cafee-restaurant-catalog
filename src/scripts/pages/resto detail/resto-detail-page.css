@@ -7,16 +7,16 @@
   padding: 1.3rem 1.7rem;
   position: static;
 }
-.content-wrapper{
-    display: grid;
-    gap: 1rem;
+.content-wrapper {
+  display: grid;
+  gap: 1rem;
 }
 .restaurant-detail__hero__img {
   width: 100vw;
 }
 .restaurant-detail__article {
   font-size: var(--resto-detail-article-size);
-  padding: .5rem;
+  padding: 0.5rem;
   display: block;
   width: 95%;
   margin-inline: auto;
@@ -37,35 +37,34 @@
   font-family: var(--cormorant-family);
   font-weight: 900;
 }
-.address-wrapper{
-    display: grid;
-    grid-template-areas: 
+.address-wrapper {
+  display: grid;
+  grid-template-areas:
     "city city city rating"
-    "address address address rating"
-    ;
-} 
-.restaurant-detail__rating{
-    grid-area: rating;
+    "address address address rating";
 }
-.restaurant-detail__city{
-    grid-area: city;
-    font-weight: 700;
-    font-size: 1.25rem;
+.restaurant-detail__rating {
+  grid-area: rating;
 }
-.restaurant-detail__adress{
-    grid-area: address;
+.restaurant-detail__city {
+  grid-area: city;
+  font-weight: 700;
+  font-size: 1.25rem;
 }
-.restaurant-detail__rating p{
-    display: inline;
-    font-weight: 900;
-    font-size: 2em;
+.restaurant-detail__adress {
+  grid-area: address;
+}
+.restaurant-detail__rating p {
+  display: inline;
+  font-weight: 900;
+  font-size: 2em;
 }
 .list-item {
   padding: 0.25rem;
   border: 1px solid var(--black-bg-col);
   border-radius: 0.25rem;
   display: inline;
-  font-size: .85rem;
+  font-size: 0.85rem;
 }
 .list-item:hover {
   background-color: var(--gray-bg-col);
@@ -86,24 +85,78 @@
   align-items: center;
   background-color: var(--normal-text-col);
 }
+.customer-review {
+  position: relative;
+  padding: 8rem 1rem 3rem;
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-areas: 
+  "review"
+  "review"
+  "review"
+  "logo"
+  "input"
+  "input"
+  ;
+}
+.customer-review h2 {
+  position: absolute;
+  width: 100%;
+  left: 1rem;
+  top: 1rem;
+  font-family: var(--cormorant-family);
+  font-size: 3rem;
+  text-transform: capitalize;
+}
+#customer-review{
+  grid-area: review;
+  overflow-y: scroll;
+}
+#customer-review::-webkit-scrollbar, #customer-review::-webkit-scrollbar-corner{
+  opacity: 0;
+}
+.customer-review__form{
+  grid-area: input;
+  background-color: var(--normal-text-col);
+  border-radius: .25rem;
+  padding: 1rem 2rem;
+}
+.customer-review__form h3{
+  font-family: var(--cormorant-family);
+  font-size: 3rem;
+  text-transform: capitalize;
+
+}
+.restaurant-detail__review__img{
+  grid-area: logo;
+  margin-block: auto;
+  max-width: 100vw;
+  width: 100%;
+}
+.customer-review__input{
+  padding: 2.1rem 1.5rem;
+  font-size: 1.2rem;
+  width: 100%;
+  margin: 2.5rem 0 1.3rem;
+}
 @media (min-width: 900px) {
   .restaurant-detail__title {
     font-size: 4.5rem;
   }
-  .content-wrapper{
+  .content-wrapper {
     position: relative;
   }
   .content-wrapper > * {
     width: 50%;
     margin: 0;
   }
-  .restaurant-detail__city{
+  .restaurant-detail__city {
     font-size: 1.5rem;
   }
-  .restaurant-detail__article{
-    padding: .75rem; 
+  .restaurant-detail__article {
+    padding: 0.75rem;
   }
-  .restaurant-detail__buttons{
+  .restaurant-detail__buttons {
     position: absolute;
     right: 0;
     top: 0;
@@ -112,13 +165,36 @@
   .list-item {
     font-size: 1rem;
   }
+  .customer-review{
+    padding: 8rem 1rem 2rem;
+    gap: 1rem;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+  "review review"
+  "review review"
+  "review review"
+  "input logo"
+  "input logo"
+  ;
+  }
+  .customer-review h2{
+    left: 1rem;
+  }
+  .customer-review__form{
+    padding: 1rem 2.75rem;
+  }
+  .restaurant-detail__review__img{
+    width: auto;
+    margin-inline: auto;
+  }
 }
 @media (min-width: 1200px) {
   .restaurant-detail__hero {
     display: flex;
     height: 100vh;
   }
-  .address-wrapper{
+  .address-wrapper {
     width: 100%;
   }
   .restaurant-detail__detail {
@@ -161,8 +237,18 @@
     top: -0.5rem;
     width: 100%;
     transform: translateY(0);
-}
-.restaurant-detail__buttons .button{
-      width: 100%;
+  }
+  .restaurant-detail__buttons .button {
+    width: 100%;
+  }
+  .customer-review {
+    padding-block: 10rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "review input logo";
+  }
+  .customer-review h2{
+    top: 2rem;
+    left: 0;
   }
 }
