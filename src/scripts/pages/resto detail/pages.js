@@ -27,6 +27,7 @@ export const RestoDetail = {
     const { id } = UrlParser._urlSplitter(url);
     const data = await GetRestaurant.detail(id);
     const res = await GetRestaurant.filterRestaurantWithRating(4.8);
+    console.log(data);
     this._createMainContent(data);
     this._createRestaurantListContent(res);
   },

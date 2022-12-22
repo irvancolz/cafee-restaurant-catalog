@@ -1,4 +1,4 @@
-const footerStyle = `    * {
+export const footerStyle = `    * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -182,5 +182,3 @@ const footerStyle = `    * {
         font-size: 1rem;
       }
     }`;
-
-export default footerStyle;

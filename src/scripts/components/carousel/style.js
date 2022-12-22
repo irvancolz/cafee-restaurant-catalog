@@ -1,4 +1,4 @@
-const carouselStyles = `
+export const carouselStyles = `
 .carousel{
     position: relative;
     width: 100vw;
@@ -88,5 +88,3 @@ const carouselStyles = `
 
 }
 `;
-
-export default carouselStyles;
