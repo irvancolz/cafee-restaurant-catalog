@@ -84,6 +84,7 @@
   flex-direction: column;
   gap: 0.5rem;
   align-items: center;
+  background-color: var(--normal-text-col);
 }
 .restaurant-detail__buttons .button {
   width: 80%;
@@ -119,23 +120,27 @@
   bottom: 100%;
 }
 @media (min-width: 900px) {
-    .restaurant-detail__hero{
-        height: 100vh;
-    }
   .restaurant-detail__title {
     font-size: 4.5rem;
+  }
+  .content-wrapper{
+    position: relative;
+  }
+  .content-wrapper > * {
+    width: 50%;
+    margin: 0;
   }
   .restaurant-detail__city{
     font-size: 1.5rem;
   }
   .restaurant-detail__article{
-    padding: .75rem;
+    padding: .75rem; 
   }
-  .restaurant-detail__buttons {
-    position: sticky;
-    right: 0px;
-    top: 2rem;
-    z-index: 5;
+  .restaurant-detail__buttons{
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateY(-5rem);
   }
   .list-item {
     font-size: 1rem;
@@ -144,6 +149,7 @@
 @media (min-width: 1200px) {
   .restaurant-detail__hero {
     display: flex;
+    height: 100vh;
   }
   .restaurant-detail__detail {
     position: relative;
@@ -181,7 +187,10 @@
     margin: 3rem 0 1.25rem;
   }
   .restaurant-detail__buttons {
+    position: sticky;
     top: -0.5rem;
+    width: 100%;
+    transform: translateY(0);
 }
 .restaurant-detail__buttons .button{
       width: 100%;

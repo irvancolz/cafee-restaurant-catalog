@@ -10,6 +10,13 @@ export const RestoDetail = {
   async render() {
     return `
     <article class="restaurant-detail__hero" id="content"></article>
+    <section>
+      <h2>customer review</h2>
+      <div>
+        <article>
+        </article>
+      </div>
+    </section>
     <section class="restaurant-list favourite__restaurant__list" id="content">
       <h2 class="subtitle">See another restaurants</h2>
       <div class="resturant-list__container container" id="restaurant-list"></div>
