@@ -77,4 +77,17 @@ function createContentFromList(list, container) {
   });
 }
 
-export { createRestaurantDetailMainContent, createContentFromList };
+function createRestoComments(list) {
+  const commetContainer = document.getElementById("customer-review");
+  list.forEach((content) => {
+    const item = document.createElement("custom-comment");
+    item.comment = content;
+    commetContainer.append(item);
+  });
+}
+
+export {
+  createRestaurantDetailMainContent,
+  createContentFromList,
+  createRestoComments,
+};

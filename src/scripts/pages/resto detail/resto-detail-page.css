@@ -40,8 +40,8 @@
 .address-wrapper{
     display: grid;
     grid-template-areas: 
-    "city city rating"
-    "address address rating"
+    "city city city rating"
+    "address address address rating"
     ;
 } 
 .restaurant-detail__rating{
@@ -150,6 +150,9 @@
   .restaurant-detail__hero {
     display: flex;
     height: 100vh;
+  }
+  .address-wrapper{
+    width: 100%;
   }
   .restaurant-detail__detail {
     position: relative;
