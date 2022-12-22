@@ -7,6 +7,7 @@ import {
   createRestoComments,
 } from "./restaurant-detail";
 import cafeeLogoDark from "../../../public/images/Cafee-logo-dark.png";
+import { AddReview } from "./addReview";
 
 export const RestoDetail = {
   async render() {
@@ -49,6 +50,7 @@ export const RestoDetail = {
     const res = await GetRestaurant.filterRestaurantWithRating(4.8);
     this._createMainContent(data);
     this._createRestaurantListContent(res);
+    AddReview.init();
   },
 
   _createMainContent(data) {

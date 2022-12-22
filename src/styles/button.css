@@ -29,7 +29,7 @@
     bottom: 100%;
   }
   .outlined-button{
-    width: 80%;
+    width: 100%;
     font-size: 1.5rem;
     font-family: var(--cormorant-family);
     font-weight: 700;

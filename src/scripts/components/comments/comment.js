@@ -13,7 +13,6 @@ class Comment extends HTMLElement {
   }
 
   set comment(data) {
-    console.log(data);
     this._comment = data;
   }
 
