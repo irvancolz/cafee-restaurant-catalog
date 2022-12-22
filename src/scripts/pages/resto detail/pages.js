@@ -19,6 +19,8 @@ export const RestoDetail = {
       <h2>customer review</h2>
       <div id="customer-review" ></div>
       <form class="customer-review__form">
+        <h3>Add Your Review</h3>
+        <p>help us become better restaurant</p>
         <input 
           placeholder="Thoughts at this place"
           aria-label="add your review"
@@ -27,7 +29,7 @@ export const RestoDetail = {
           class="customer-review__input" />
           <button 
             type="submit" 
-            class="customer-review__submit">
+            class="customer-review__submit primary-button">
               Review
           </button>
       </form>
