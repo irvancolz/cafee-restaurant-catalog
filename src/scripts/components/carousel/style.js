@@ -11,10 +11,13 @@ export const carouselStyles = `
     opacity: 0;
 }
 .slide{
-    transition: opacity .5s ease-in-out;
+    transition: all .5s ease-in-out;
 }
 .slide:focus, .slide.active{
     opacity: 1;
+}
+.slide.active{
+    z-index: 5;
 }
 .slide:focus{
     z-index: 10;

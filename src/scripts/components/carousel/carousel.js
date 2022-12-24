@@ -53,7 +53,7 @@ export class Carousel extends HTMLElement {
     const slide = document.createElement("li");
     slide.className = "slide__wrapper";
     slide.innerHTML = `
-    <a href="#/resto/${data.id}" aria-label="link to resto ${data.name} pages">
+    <a href="#/resto/${data.id}" class="slide active" aria-label="link to resto ${data.name} pages">
     <img 
       src="https://restaurant-api.dicoding.dev/images/large/${data.pictureId}" 
       alt="${data.name} images"/>
