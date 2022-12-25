@@ -19,7 +19,6 @@ export const RestoDetail = {
     </article>
     <section class="customer-review container">
       <h2>customer review</h2>
-      <div id="customer-review" ></div>
       <form class="customer-review__form">
         <h3>Add Your Review</h3>
         <p>help us become better restaurant</p>
@@ -35,6 +34,7 @@ export const RestoDetail = {
               Review
           </button>
       </form>
+      <div id="customer-review" ></div>
       <img src=${cafeeLogoDark} alt="cafee logo" class="restaurant-detail__review__img"/>
     </section>
     <section 
