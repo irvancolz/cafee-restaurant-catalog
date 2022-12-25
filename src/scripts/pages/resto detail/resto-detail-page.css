@@ -109,6 +109,7 @@
   text-transform: capitalize;
 }
 #customer-review{
+  max-height: 100vh;
   grid-area: review;
   overflow-y: scroll;
 }
@@ -188,6 +189,9 @@
     width: auto;
     margin-inline: auto;
   }
+  #customer-review{
+    max-height: 70vh;
+  }
 }
 @media (min-width: 1200px) {
   .restaurant-detail__hero {
@@ -250,5 +254,8 @@
   .customer-review h2{
     top: 2rem;
     left: 0;
+  }
+  #customer-review{
+    max-height: 50vh;
   }
 }

@@ -10,9 +10,9 @@ export const Resto = {
     <section class="restaurant-list container" id="content">
     <div>
       <h1 class="restaurant-list__title title">
-      Your 
-        <span>favourite</span>
-      restaurant
+        places you might be 
+          <span>interested</span>
+         in
       </h1>
       <div class="favourite-restaurant__slider" >
       <div class="resturant-list__container" id="restaurant-slider"></div>
@@ -34,9 +34,8 @@ export const Resto = {
     </div>
     <div>
       <h2 class="restaurant-list__title title">
-        places you might be 
-          <span>interested</span>
-         in
+        see the other 
+          <span>restaurants</span>
       </h2>
       <div class="resturant-list__container" id="restaurant-list"></div>
     </div>
@@ -47,9 +46,10 @@ export const Resto = {
     const restaurantListContainer = document.getElementById("restaurant-list");
     const restaurantSliderContainer =
       document.getElementById("restaurant-slider");
+    const resto = await GetRestaurant.list();
     const filteredResto = await GetRestaurant.filterRestaurantWithRating(4.6);
     this._createRestaurantListContent(restaurantSliderContainer, filteredResto);
-    this._createRestaurantListContent(restaurantListContainer, filteredResto);
+    this._createRestaurantListContent(restaurantListContainer, resto);
     this._createCarouselContent(filteredResto);
     Slider.init();
   },

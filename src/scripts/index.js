@@ -11,6 +11,7 @@ import "../styles/title.css";
 import "../styles/button.css";
 import "./components";
 import App from "./app";
+import "./storage/db";
 
 const app = new App({ content: document.querySelector("#main") });
 
