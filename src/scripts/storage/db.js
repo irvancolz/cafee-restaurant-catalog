@@ -39,6 +39,15 @@ function getData(id) {
   return response;
 }
 
+function getDataList() {
+  const result = db.result;
+  const transaction = result.transaction("favourite-resto", "readonly");
+  const store = transaction.objectStore("favourite-resto");
+
+  const response = store.getAll();
+  return response;
+}
+
 function deleteDataFromDb(id) {
   const result = db.result;
   const transaction = result.transaction("favourite-resto", "readwrite");
@@ -58,4 +67,8 @@ export function deleteFromFavourite(id) {
 
 export function getRestoFavouriteRegsistry(id) {
   return getData(id);
+}
+
+export function getRestoFavouriteList() {
+  return getDataList();
 }

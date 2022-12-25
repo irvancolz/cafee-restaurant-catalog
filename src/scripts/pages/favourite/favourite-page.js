@@ -1,5 +1,6 @@
 import { GetRestaurant } from "../../api";
 import { createRestaurantCards } from "../../helper";
+import { getRestoFavouriteList } from "../../storage/db";
 
 export const Favourite = {
   async render() {
@@ -12,18 +13,21 @@ export const Favourite = {
   },
   async afterRender() {
     const res = await GetRestaurant.filterRestaurantWithRating(4.5);
-    this._createRestaurantListContent(res);
+    this._createRestaurantListContent();
     this._createCarouselContent(res);
   },
 
-  _createRestaurantListContent(list) {
+  _createRestaurantListContent() {
     const restaurantListContainer = document.getElementById("restaurant-list");
-    list.forEach((resto) => {
-      const restaurant = document.createElement("article");
-      restaurant.classList.add("restaurants");
-      restaurant.innerHTML = createRestaurantCards(resto);
-      restaurantListContainer.append(restaurant);
-    });
+    const favouriteResto = getRestoFavouriteList();
+    favouriteResto.onsuccess = () => {
+      favouriteResto.result.forEach((resto) => {
+        const restaurant = document.createElement("article");
+        restaurant.classList.add("restaurants");
+        restaurant.innerHTML = createRestaurantCards(resto);
+        restaurantListContainer.append(restaurant);
+      });
+    }
   },
 
   _createCarouselContent(list) {
