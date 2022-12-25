@@ -1,3 +1,9 @@
+import {
+  addToFavourite,
+  deleteFromFavourite,
+  getRestoFavouriteRegsistry,
+} from "../../storage";
+
 function createRestaurantDetailMainContent(data) {
   return ` 
     <img 
@@ -39,7 +45,8 @@ function createRestaurantDetailMainContent(data) {
             </button>
             <button 
               aria-label="add this restaurant to favourite" 
-              class="button favourite-btn outlined-button">
+              class="button favourite-btn outlined-button"
+              data-favourited="false">
               Add Favourite
             </button>
         </div>
@@ -86,8 +93,47 @@ function createRestoComments(list) {
   });
 }
 
+// add to favourite handling
+
+function setFavouriteButtonActions(status) {
+  const favouriteBtn = document.querySelector(".favourite-btn");
+  if (status) {
+    favouriteBtn.innerHTML = "Favourited";
+    favouriteBtn.setAttribute("data-favourited", "true");
+  } else {
+    favouriteBtn.innerHTML = "Add Favourite";
+    favouriteBtn.setAttribute("data-favourited", "false");
+  }
+}
+
+function getRestoFavouriteStatus(id) {
+  const status = getRestoFavouriteRegsistry(id);
+  status.onsuccess = () => {
+    setFavouriteButtonActions(status.result);
+  };
+}
+
+function handleFavouritedResto(data) {
+  getRestoFavouriteStatus(data.id);
+  const favouriteBtn = document.querySelector(".favourite-btn");
+  // const addFavouriteBtn = document.querySelector('[data-favourited="true"]');
+  // const delFavouriteBtn = document.querySelector('[data-favourited="false"]');
+
+  favouriteBtn.addEventListener("click", () => {
+    const favStatus = favouriteBtn.getAttribute("data-favourited");
+    if (favStatus === "true") {
+      deleteFromFavourite(data.id);
+    }
+    if (favStatus === "false") {
+      addToFavourite(data);
+    }
+    getRestoFavouriteStatus(data.id);
+  });
+}
+
 export {
   createRestaurantDetailMainContent,
   createContentFromList,
   createRestoComments,
+  handleFavouritedResto,
 };

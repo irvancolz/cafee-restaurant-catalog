@@ -5,6 +5,7 @@ import {
   createContentFromList,
   createRestaurantDetailMainContent,
   createRestoComments,
+  handleFavouritedResto,
 } from "./restaurant-detail";
 import cafeeLogoDark from "../../../public/images/Cafee-logo-dark.png";
 import { AddReview } from "./addReview";
@@ -51,6 +52,7 @@ export const RestoDetail = {
     this._createMainContent(data);
     this._createRestaurantListContent(res);
     AddReview.init();
+    handleFavouritedResto(data);
   },
 
   _createMainContent(data) {
