@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --config webpack.dev.js",
+    "dev": "webpack-dev-server --config webpack.dev.js --port 8000",
     "build": "webpack --config webpack.prod.js",
     "test": "karma start",
     "lint": "eslint ./src/scripts",
-    "sw": "workbox generateSW workbox-config.js"
+    "sw": "workbox generateSW workbox-config.js",
+    "serve" : "http-server dist --port 3000"
   },
   "keywords": [],
   "author": "your_name <your.email@domain.com>",
@@ -26,6 +27,7 @@
     "eslint-plugin-n": "^15.6.0",
     "eslint-plugin-promise": "^6.1.1",
     "html-webpack-plugin": "^5.5.0",
+    "http-server": "^14.1.1",
     "jasmine-ajax": "^4.0.0",
     "jasmine-core": "^4.2.0",
     "karma": "^5.2.3",
@@ -43,6 +45,7 @@
     "workbox-webpack-plugin": "^6.5.4"
   },
   "dependencies": {
-    "regenerator-runtime": "^0.13.9"
+    "regenerator-runtime": "^0.13.9",
+    "workbox-window": "^6.5.4"
   }
 }
