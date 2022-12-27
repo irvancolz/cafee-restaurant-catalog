@@ -10,8 +10,6 @@ const AssetToBeCached = [
   "/images/manifest-icons-large.png",
   "/images/profile-picture.png",
   "/images/heros/hero-image_3.webp",
-  "/images/Star 1.svg",
-  "/images/Arrow 1.svg",
 ];
 
 export const cacheController = {
@@ -40,12 +38,14 @@ export const cacheController = {
     const response = await caches.match(request);
     // if the request is available in cache
     // return the data from cache to browser
-    if (response && response !== undefined) {
+    if (response) {
       return response;
     } else {
       // get data from the server
       const getData = await fetch(response);
-
+      if (!getData || getData.status !== 200) {
+        return getData;
+      }
       // save data to cache then return the data to browser
       const cache = await caches.open(this.cache__name);
       cache.put(request, getData.clone());
