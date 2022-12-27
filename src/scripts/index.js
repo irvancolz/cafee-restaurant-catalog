@@ -16,11 +16,11 @@ import { registerServiceWorker } from "./helper";
 
 const app = new App({ content: document.querySelector("#main") });
 
-window.addEventListener("load", () => {
-  app.renderPage();
-  registerServiceWorker();
+window.addEventListener("load", async () => {
+  await app.renderPage();
+  await registerServiceWorker();
 });
 
-window.addEventListener("hashchange", () => {
-  app.renderPage();
+window.addEventListener("hashchange", async () => {
+  await app.renderPage();
 });

@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-return */
 import { cacheController } from "./helper";
 
 self.addEventListener("install", (event) => {
@@ -12,6 +13,12 @@ self.addEventListener("activate", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
+  if (
+    event.request.url.startsWith("chrome-extension") ||
+    event.request.url.includes("extension")
+  ) {
+    return;
+  }
   event.respondWith(
     cacheController._validateCache(event.request)
   );
