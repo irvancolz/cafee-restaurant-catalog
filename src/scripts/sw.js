@@ -12,20 +12,10 @@ self.addEventListener("activate", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
-  // console.log(event.request.url);
+  // console.log("request for", event.request.url);
   // cacheController._validateCache(event.request);
   event.respondWith(
-    caches.match(event.request).then((cacheRes) => {
-      if (!cacheRes) {
-        console.log("cannot find", event.request);
-      }
-      return cacheRes || fetch(event.request).then(response => {
-        caches.open(cacheController.cache__name).then(cache => {
-          cache.put(event.request, response.clone());
-          return response;
-        })
-      });
-    })
+    cacheController._validateCache(event.request)
   );
   // TODO: Add/get fetch request to/from caches
 });

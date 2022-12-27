@@ -1,5 +1,9 @@
 const AssetToBeCached = [
+  "app.bundle.js",
+  "sw.bundle.js",
   "/",
+  "index.html",
+  "app.webmanifest",
   "/images/Cafee-footer-logo.png",
   "/images/Cafee-logo.png",
   "/images/manifest-icons-small.png",
@@ -8,9 +12,6 @@ const AssetToBeCached = [
   "/images/heros/hero-image_3.webp",
   "/images/Star 1.svg",
   "/images/Arrow 1.svg",
-  "/index.html",
-  "app.bundle.js",
-  "app.webmanifest",
 ];
 
 export const cacheController = {
@@ -35,22 +36,20 @@ export const cacheController = {
   },
 
   async _validateCache(request) {
-    const cacheList = await caches.match(request);
-    if (cacheList) {
-      this._fetchContent(request);
-      return cacheList;
-    }
-    this._fetchContent(request);
-    return cacheList;
-  },
-
-  async _fetchContent(request) {
-    const response = await fetch(request);
-    if (!response || response.status !== 200) {
+    // check request in cache
+    const response = await caches.match(request);
+    // if the request is available in cache
+    // return the data from cache to browser
+    if (response && response !== undefined) {
       return response;
+    } else {
+      // get data from the server
+      const getData = await fetch(response);
+
+      // save data to cache then return the data to browser
+      const cache = await caches.open(this.cache__name);
+      cache.put(request, getData.clone());
+      return getData;
     }
-    const cache = await caches.open(this.cache__name);
-    cache.put(request, response.clone());
-    return response;
   },
 };
