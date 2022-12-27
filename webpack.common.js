@@ -6,9 +6,10 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = {
   entry: {
     app: path.resolve(__dirname, 'src/scripts/index.js'),
+    sw: path.resolve(__dirname, 'src/scripts/sw.js'),
   },
   output: {
-    filename: '[name].[contenthash].js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
@@ -26,7 +27,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpg)$/,
+        test: /\.(png|jpg|webp)$/,
         type: "asset/resource",
       }
     ],

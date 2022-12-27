@@ -12,11 +12,6 @@ db.onerror = (e) => {
 db.onupgradeneeded = (e) => {
   const server = db.result;
   server.createObjectStore(DB_CONFIG.storeName, { keyPath: "id" });
-  console.log("data is upgraded");
-};
-
-db.onsuccess = (e) => {
-  console.log("data is ready");
 };
 
 function addDataToDb(data) {
@@ -27,7 +22,6 @@ function addDataToDb(data) {
   store.put({
     ...data,
   });
-  console.log("data added!");
 }
 
 function getData(id) {
@@ -54,7 +48,6 @@ function deleteDataFromDb(id) {
   const store = transaction.objectStore("favourite-resto");
 
   store.delete(id);
-  console.log("data deleted!");
 }
 
 export function addToFavourite(resto) {

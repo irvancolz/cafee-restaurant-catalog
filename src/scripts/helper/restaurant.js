@@ -2,7 +2,7 @@ export function createRestaurantCards(data) {
   return `
       <img
         src="https://restaurant-api.dicoding.dev/images/medium/${data.pictureId}"
-        alt="${data.name} restaurants images"
+        alt="${data.name} restaurants"
         loading="lazy"
         title="${data.name} restaurants"
       />
