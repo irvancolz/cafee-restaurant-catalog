@@ -1,5 +1,6 @@
 import { GetRestaurant } from "../../api";
 import { createRestaurantCards } from "../../helper";
+import heroImg from "../../../public/images/heros/hero-image_3.webp"
 
 export const Home = {
   async render() {
@@ -8,6 +9,7 @@ export const Home = {
     <h1 class="hero__text">
       Look no further for interesting restaurants
     </h1>
+    <img class="hero__img" src=${heroImg} alt=""/>
   </div>
   <section id="content" class="hotspots container">
     <div class="hotspots__title__container">
