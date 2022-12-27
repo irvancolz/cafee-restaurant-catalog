@@ -39,6 +39,10 @@ export const cacheController = {
     // if the request is available in cache
     // return the data from cache to browser
     if (response) {
+      const getData = await fetch(response);
+      caches.open(this.cache__name).then((cache) => {
+        cache.put(request, getData.clone());
+      });
       return response;
     } else {
       // get data from the server
