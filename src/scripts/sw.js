@@ -4,6 +4,7 @@ import { cacheController } from "./helper";
 self.addEventListener("install", (event) => {
   // TODO: Caching App Shell Resource
   console.log("service worker installed");
+  // caches.delete(cacheController.cache__name);
   event.waitUntil(cacheController._startCache());
 });
 self.addEventListener("activate", (event) => {
