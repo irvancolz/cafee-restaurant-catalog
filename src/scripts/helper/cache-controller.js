@@ -34,25 +34,15 @@ export const cacheController = {
   },
 
   async _validateCache(request) {
-    // check request in cache
     const response = await caches.match(request);
-    // if the request is available in cache
-    // return the data from cache to browser
-    if (response) {
-      const getData = await fetch(response);
-      const cache = await caches.open(this.cache__name);
-      cache.put(request, getData.clone());
-      return response;
-    } else {
-      // get data from the server
-      const getData = await fetch(response);
-      if (!getData || getData.status !== 200) {
-        return getData;
-      }
-      // save data to cache then return the data to browser
-      const cache = await caches.open(this.cache__name);
-      cache.put(request, getData.clone());
-      return getData;
-    }
+    return (
+      response ||
+      fetch(request).then((fetchRes) => {
+        caches.open(this.cache__name).then(cache => {
+          cache.put(request, fetchRes.clone());
+          return fetchRes;
+        })
+      })
+    );
   },
 };
