@@ -23,10 +23,20 @@
   background-position: bottom;
   z-index: -1;
 }
+.warning__container .subtitle {
+  margin-inline: auto;
+  width: 50%;
+  text-align: center;
+}
 .subtitle {
   font-size: 3rem;
   font-family: var(--cormorant-family);
   font-weight: 900;
+}
+.subtitle > a{
+  font-family: var(--cormorant-family);
+  text-transform: capitalize;
+  color: var(--gold-bg-col);
 }
 @media (min-width: 1200px) {
   .subtitle {
