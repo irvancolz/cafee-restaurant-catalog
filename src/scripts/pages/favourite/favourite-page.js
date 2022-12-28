@@ -21,17 +21,29 @@ export const Favourite = {
     const restaurantListContainer = document.getElementById("restaurant-list");
     const favouriteResto = getRestoFavouriteList();
     favouriteResto.onsuccess = () => {
+      if (favouriteResto.result.length === 0) {
+        this._handleEmptyFavourite();
+      }
       favouriteResto.result.forEach((resto) => {
         const restaurant = document.createElement("article");
         restaurant.classList.add("restaurants");
         restaurant.innerHTML = createRestaurantCards(resto);
         restaurantListContainer.append(restaurant);
       });
-    }
+    };
   },
 
   _createCarouselContent(list) {
     const carousel = document.querySelector("custom-carousel");
     carousel.restaurantList = list;
+  },
+  _handleEmptyFavourite() {
+    const restaurantListContainer = document.getElementById("content");
+    const infoTxt = document.createElement("div");
+    infoTxt.className = "warning__container";
+    infoTxt.innerHTML = `
+    <h2 class="subtitle">looks like you don't have any favourite <a href="#/resto">restaurant</a> yet.</h2>
+    `
+    restaurantListContainer.append(infoTxt);
   },
 };
