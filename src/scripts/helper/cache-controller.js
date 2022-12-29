@@ -43,15 +43,6 @@ export const cacheController = {
       opt.credentials = "omit";
     }
     const response = await caches.match(request);
-    // return (
-    //   response ||
-    //   fetch(request).then((fetchRes) => {
-    //     caches.open(this.cache__name).then((cache) => {
-    //       cache.put(request, fetchRes.clone());
-    //       return fetchRes;
-    //     });
-    //   })
-    // );
     return (
       response ||
       Promise.resolve().then(() => {

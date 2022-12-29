@@ -2,7 +2,7 @@
 import { commentStyles } from "./style";
 import avatarLogo from "../../../public/images/profile-picture.png";
 
-class Comment extends HTMLElement {
+export class Comment extends HTMLElement {
   constructor() {
     super();
     this._shadowRoot = this.attachShadow({ mode: "open" });
