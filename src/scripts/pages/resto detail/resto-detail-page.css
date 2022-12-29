@@ -232,6 +232,8 @@
       #111111 100%
     );
     border: none;
+    max-height: 60vh;
+    overflow: hidden;
   }
   .restaurant-detail__list-title {
     margin: 3rem 0 1.25rem;
