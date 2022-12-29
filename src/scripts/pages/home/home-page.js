@@ -4,6 +4,7 @@ import heroImg from "../../../public/images/heros/hero-image_3.webp"
 
 export const Home = {
   async render() {
+    document.title = 'Cafee'
     return `
     <div class="hero">
     <h1 class="hero__text">

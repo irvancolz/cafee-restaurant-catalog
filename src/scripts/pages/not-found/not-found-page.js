@@ -1,5 +1,6 @@
 export const NotFound = {
   async render() {
+    document.title = 'Cafee | Not Found'
     return `
           <div>
           <h1>Sorry the pages not found</h1>
