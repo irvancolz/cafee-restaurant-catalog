@@ -43,6 +43,9 @@ export const cacheController = {
       opt.credentials = "omit";
     }
     const response = await caches.match(request);
+    const latestData = await fetch(request);
+    const cache = await caches.open(this.cache__name);
+    cache.put(request, latestData);
     return (
       response ||
       Promise.resolve().then(() => {
