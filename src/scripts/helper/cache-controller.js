@@ -34,13 +34,32 @@ export const cacheController = {
   },
 
   async _validateCache(request) {
+    const opt = {
+      mode: request.mode,
+      cache: "no-cache",
+    };
+    if (!request.url.startsWith(location.origin)) {
+      opt.mode = "cors";
+      opt.credentials = "omit";
+    }
     const response = await caches.match(request);
+    // return (
+    //   response ||
+    //   fetch(request).then((fetchRes) => {
+    //     caches.open(this.cache__name).then((cache) => {
+    //       cache.put(request, fetchRes.clone());
+    //       return fetchRes;
+    //     });
+    //   })
+    // );
     return (
       response ||
-      fetch(request).then((fetchRes) => {
-        caches.open(this.cache__name).then((cache) => {
-          cache.put(request, fetchRes.clone());
-          return fetchRes;
+      Promise.resolve().then(() => {
+        return fetch(request, opt).then((fetchRes) => {
+          return caches.open(this.cache__name).then((cache) => {
+            cache.put(request, fetchRes.clone());
+            return fetchRes;
+          });
         });
       })
     );
