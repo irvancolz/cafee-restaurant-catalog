@@ -205,7 +205,7 @@
     position: relative;
     overflow-y: scroll;
     flex-basis: 25%;
-    height: 75vh;
+    height: 65vh;
     margin-top: auto;
     transform: translateY(-3rem);
   }
@@ -232,6 +232,8 @@
       #111111 100%
     );
     border: none;
+    max-height: 60vh;
+    overflow: hidden;
   }
   .restaurant-detail__list-title {
     margin: 3rem 0 1.25rem;

@@ -36,8 +36,7 @@ background-color: var(--black-bg-col);
   border: none;
   background-color: transparent;
   color: var(--normal-text-col);
-}
-.header__menu__btn {
+  cursor: pointer;
   width: 44px;
 }
 .topnav {

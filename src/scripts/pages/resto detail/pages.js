@@ -27,7 +27,8 @@ export const RestoDetail = {
           aria-label="add your review"
           title="add your review"
           type="text"
-          class="customer-review__input" />
+          class="customer-review__input" 
+          required/>
           <button 
             type="submit" 
             class="customer-review__submit primary-button">
@@ -52,7 +53,7 @@ export const RestoDetail = {
     this._createMainContent(data);
     this._createRestaurantListContent(res);
     document.title = `Cafee | ${data.name}`
-    AddReview.init();
+    AddReview.init(id);
     handleFavouritedResto(data);
   },
 
