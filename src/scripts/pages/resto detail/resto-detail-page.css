@@ -205,7 +205,7 @@
     position: relative;
     overflow-y: scroll;
     flex-basis: 25%;
-    height: 75vh;
+    height: 65vh;
     margin-top: auto;
     transform: translateY(-3rem);
   }
