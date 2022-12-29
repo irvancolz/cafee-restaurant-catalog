@@ -4,6 +4,7 @@ import { getRestoFavouriteList } from "../../storage/db";
 
 export const Favourite = {
   async render() {
+    document.title = 'Cafee | Favourite Restaurant'
     return `
     <custom-carousel interval="4"></custom-carousel>
     <section class="restaurant-list container" id="content">

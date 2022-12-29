@@ -20,8 +20,6 @@ self.addEventListener("fetch", (event) => {
   ) {
     return;
   }
-  event.respondWith(
-    cacheController._validateCache(event.request)
-  );
+  event.respondWith(cacheController._validateCache(event.request));
   // TODO: Add/get fetch request to/from caches
 });

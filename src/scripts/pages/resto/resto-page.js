@@ -5,6 +5,7 @@ import "./slider-controller.css";
 
 export const Resto = {
   async render() {
+    document.title = 'Cafee | Restaurant List'
     return `
     <custom-carousel interval="5"></custom-carousel>
     <section class="restaurant-list container" id="content">

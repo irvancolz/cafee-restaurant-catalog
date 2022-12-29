@@ -57,7 +57,7 @@ export const commentStyles = `
         font-size: 2rem;
     }
     .review__container{
-        width: 450px;
+        max-width: 100%;
     }
 }
 `;
