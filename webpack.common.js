@@ -13,12 +13,12 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     clean: true,
     assetModuleFilename: (pathData) => {
-      const filePath = pathData.filename
-        .split("/images")
-        .at(-1)
+      const filepath = path
+        .dirname(pathData.filename)
         .split("/")
-        .join("");
-      return `images/${filePath}`;
+        .slice(1)
+        .join("/");
+      return `${filepath}/[name][ext]`;
     },
   },
   module: {
