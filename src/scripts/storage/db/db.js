@@ -1,7 +1,7 @@
 const DB_CONFIG = {
   storeName: "favourite-resto",
 };
-
+const indexedDB = window.indexedDB;
 const db = indexedDB.open(DB_CONFIG.storeName, 1);
 
 db.onerror = (e) => {
@@ -12,26 +12,26 @@ db.onerror = (e) => {
 db.onupgradeneeded = (e) => {
   const server = db.result;
   server.createObjectStore(DB_CONFIG.storeName, { keyPath: "id" });
+  console.log("data is upgraded");
+};
+
+db.onsuccess = (e) => {
+  console.log("data is ready");
 };
 
 function addDataToDb(data) {
-  let result;
-  db.onsuccess = async () => {
-    result = await db.result;
-  }
+  const result = db.result;
   const transaction = result.transaction("favourite-resto", "readwrite");
   const store = transaction.objectStore("favourite-resto");
 
   store.put({
     ...data,
   });
+  console.log("data added!");
 }
 
 function getData(id) {
-  let result;
-  db.onsuccess = async () => {
-    result = await db.result;
-  }
+  const result = db.result;
   const transaction = result.transaction("favourite-resto", "readonly");
   const store = transaction.objectStore("favourite-resto");
 
@@ -40,10 +40,7 @@ function getData(id) {
 }
 
 function getDataList() {
-  let result;
-  db.onsuccess = async () => {
-    result = await db.result;
-  }
+  const result = db.result;
   const transaction = result.transaction("favourite-resto", "readonly");
   const store = transaction.objectStore("favourite-resto");
 
@@ -52,14 +49,12 @@ function getDataList() {
 }
 
 function deleteDataFromDb(id) {
-  let result;
-  db.onsuccess = async () => {
-    result = await db.result;
-  }
+  const result = db.result;
   const transaction = result.transaction("favourite-resto", "readwrite");
   const store = transaction.objectStore("favourite-resto");
 
   store.delete(id);
+  console.log("data deleted!");
 }
 
 export function addToFavourite(resto) {
