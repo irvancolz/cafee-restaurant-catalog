@@ -1,7 +1,7 @@
 const DB_CONFIG = {
   storeName: "favourite-resto",
 };
-const indexedDB = window.indexedDB;
+
 const db = indexedDB.open(DB_CONFIG.storeName, 1);
 
 db.onerror = (e) => {
@@ -15,7 +15,10 @@ db.onupgradeneeded = (e) => {
 };
 
 function addDataToDb(data) {
-  const result = db.result;
+  let result;
+  db.onsuccess = async () => {
+    result = await db.result;
+  }
   const transaction = result.transaction("favourite-resto", "readwrite");
   const store = transaction.objectStore("favourite-resto");
 
@@ -25,7 +28,10 @@ function addDataToDb(data) {
 }
 
 function getData(id) {
-  const result = db.result;
+  let result;
+  db.onsuccess = async () => {
+    result = await db.result;
+  }
   const transaction = result.transaction("favourite-resto", "readonly");
   const store = transaction.objectStore("favourite-resto");
 
@@ -34,7 +40,10 @@ function getData(id) {
 }
 
 function getDataList() {
-  const result = db.result;
+  let result;
+  db.onsuccess = async () => {
+    result = await db.result;
+  }
   const transaction = result.transaction("favourite-resto", "readonly");
   const store = transaction.objectStore("favourite-resto");
 
@@ -43,7 +52,10 @@ function getDataList() {
 }
 
 function deleteDataFromDb(id) {
-  const result = db.result;
+  let result;
+  db.onsuccess = async () => {
+    result = await db.result;
+  }
   const transaction = result.transaction("favourite-resto", "readwrite");
   const store = transaction.objectStore("favourite-resto");
 
