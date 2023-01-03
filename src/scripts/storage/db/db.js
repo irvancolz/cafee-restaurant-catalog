@@ -1,57 +1,82 @@
+import { openDB } from "idb";
 const DB_CONFIG = {
   storeName: "favourite-resto",
+  storeVersion: 1,
 };
-const indexedDB = window.indexedDB;
-const db = indexedDB.open(DB_CONFIG.storeName, 1);
+// const indexedDB = window.indexedDB;
+// const db = indexedDB.open(DB_CONFIG.storeName, 1);
 
-db.onerror = (e) => {
-  console.log("an error has occured");
-  console.log(e);
-};
+openDB(DB_CONFIG.storeName, DB_CONFIG.storeVersion, {
+  upgrade(db) {
+    db.createObjectStore(DB_CONFIG.storeName);
+    console.log("store created", DB_CONFIG.storeName);
+  },
+});
 
-db.onupgradeneeded = (e) => {
-  const server = db.result;
-  server.createObjectStore(DB_CONFIG.storeName, { keyPath: "id" });
-};
+// db.onerror = (e) => {
+//   console.log("an error has occured");
+//   console.log(e);
+// };
 
-db.onsuccess = (e) => {
-};
+// db.onupgradeneeded = (e) => {
+//   const server = db.result;
+//   server.createObjectStore(DB_CONFIG.storeName, { keyPath: "id" });
+// };
 
-function addDataToDb(data) {
-  const result = db.result;
-  const transaction = result.transaction("favourite-resto", "readwrite");
-  const store = transaction.objectStore("favourite-resto");
+// db.onsuccess = (e) => {};
 
-  store.put({
-    ...data,
-  });
+async function addDataToDb(data) {
+  // const result = db.result;
+  // const transaction = result.transaction("favourite-resto", "readwrite");
+  // const store = transaction.objectStore("favourite-resto");
+
+  // store.put({
+  //   ...data,
+  // });
+  (await openDB(DB_CONFIG.storeName))
+    .transaction(DB_CONFIG.storeName, "readwrite")
+    .objectStore(DB_CONFIG.storeName)
+    .add(data, "id");
   console.log("data added!");
 }
 
-function getData(id) {
-  const result = db.result;
-  const transaction = result.transaction("favourite-resto", "readonly");
-  const store = transaction.objectStore("favourite-resto");
+async function getData(id) {
+  // const result = db.result;
+  // const transaction = result.transaction("favourite-resto", "readonly");
+  // const store = transaction.objectStore("favourite-resto");
 
-  const response = store.get(id);
+  // const response = store.get(id);
+  const response = (await openDB(DB_CONFIG.storeName))
+    .transaction(DB_CONFIG.storeName, "readonly")
+    .objectStore(DB_CONFIG.storeName)
+    .get(id)
+    .then((data) => {
+      return data;
+    });
+  console.log(response);
   return response;
 }
 
-function getDataList() {
-  const result = db.result;
-  const transaction = result.transaction("favourite-resto", "readonly");
-  const store = transaction.objectStore("favourite-resto");
-
-  const response = store.getAll();
+async function getDataList() {
+  // const result = db.result;
+  // const transaction = result.transaction("favourite-resto", "readonly");
+  // const store = transaction.objectStore("favourite-resto");
+  // const response = store.getAll();
+  // return response;
+  const response = (await openDB(DB_CONFIG.storeName))
+    .transaction(DB_CONFIG.storeName)
+    .objectStore(DB_CONFIG.storeName)
+    .getAll();
+  console.log(response);
   return response;
 }
 
 function deleteDataFromDb(id) {
-  const result = db.result;
-  const transaction = result.transaction("favourite-resto", "readwrite");
-  const store = transaction.objectStore("favourite-resto");
+  // const result = db.result;
+  // const transaction = result.transaction("favourite-resto", "readwrite");
+  // const store = transaction.objectStore("favourite-resto");
 
-  store.delete(id);
+  // store.delete(id);
   console.log("data deleted!");
 }
 
