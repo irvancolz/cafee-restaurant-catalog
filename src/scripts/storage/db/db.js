@@ -12,11 +12,9 @@ db.onerror = (e) => {
 db.onupgradeneeded = (e) => {
   const server = db.result;
   server.createObjectStore(DB_CONFIG.storeName, { keyPath: "id" });
-  console.log("data is upgraded");
 };
 
 db.onsuccess = (e) => {
-  console.log("data is ready");
 };
 
 function addDataToDb(data) {
