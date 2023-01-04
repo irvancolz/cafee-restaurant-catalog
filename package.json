@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "webpack-dev-server --config webpack.dev.js --port 8000",
     "build": "webpack --config webpack.prod.js",
-    "test": "jest",
     "lint": "eslint ./src/scripts",
+    "test": "jest",
     "sw": "workbox generateSW workbox-config.js",
     "serve": "http-server dist --port 3000"
   },
@@ -22,7 +22,6 @@
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
-    "dexie": "^3.2.2",
     "eslint": "^8.29.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
@@ -50,6 +49,7 @@
     "workbox-webpack-plugin": "^6.5.4"
   },
   "dependencies": {
+    "idb": "^7.1.1",
     "regenerator-runtime": "^0.13.9",
     "workbox-window": "^6.5.4"
   }

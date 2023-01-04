@@ -4,7 +4,7 @@ import { getRestoFavouriteList } from "../../storage/db";
 
 export const Favourite = {
   async render() {
-    document.title = 'Cafee | Favourite Restaurant'
+    document.title = "Cafee | Favourite Restaurant";
     return `
     <custom-carousel interval="4"></custom-carousel>
     <section class="restaurant-list container" id="content">
@@ -18,20 +18,18 @@ export const Favourite = {
     this._createCarouselContent(res);
   },
 
-  _createRestaurantListContent() {
+  async _createRestaurantListContent() {
     const restaurantListContainer = document.getElementById("restaurant-list");
-    const favouriteResto = getRestoFavouriteList();
-    favouriteResto.onsuccess = () => {
-      if (favouriteResto.result.length === 0) {
-        this._handleEmptyFavourite();
-      }
-      favouriteResto.result.forEach((resto) => {
-        const restaurant = document.createElement("article");
-        restaurant.classList.add("restaurants");
-        restaurant.innerHTML = createRestaurantCards(resto);
-        restaurantListContainer.append(restaurant);
-      });
-    };
+    const favouriteResto = await getRestoFavouriteList();
+    if (favouriteResto.length === 0) {
+      this._handleEmptyFavourite();
+    }
+    favouriteResto.forEach((resto) => {
+      const restaurant = document.createElement("article");
+      restaurant.classList.add("restaurants");
+      restaurant.innerHTML = createRestaurantCards(resto);
+      restaurantListContainer.append(restaurant);
+    });
   },
 
   _createCarouselContent(list) {
@@ -44,7 +42,7 @@ export const Favourite = {
     infoTxt.className = "warning__container";
     infoTxt.innerHTML = `
     <h2 class="subtitle">looks like you don't have any favourite <a href="#/resto">restaurant</a> yet.</h2>
-    `
+    `;
     restaurantListContainer.append(infoTxt);
   },
 };
