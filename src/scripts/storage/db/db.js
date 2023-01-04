@@ -36,7 +36,7 @@ async function addDataToDb(data) {
   (await openDB(DB_CONFIG.storeName))
     .transaction(DB_CONFIG.storeName, "readwrite")
     .objectStore(DB_CONFIG.storeName)
-    .add(data, "id");
+    .add(data, data.id);
   console.log("data added!");
 }
 
@@ -50,10 +50,6 @@ async function getData(id) {
     .transaction(DB_CONFIG.storeName, "readonly")
     .objectStore(DB_CONFIG.storeName)
     .get(id)
-    .then((data) => {
-      return data;
-    });
-  console.log(response);
   return response;
 }
 
@@ -67,7 +63,6 @@ async function getDataList() {
     .transaction(DB_CONFIG.storeName)
     .objectStore(DB_CONFIG.storeName)
     .getAll();
-  console.log(response);
   return response;
 }
 

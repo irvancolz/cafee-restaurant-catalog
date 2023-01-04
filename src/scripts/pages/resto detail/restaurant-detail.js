@@ -108,9 +108,11 @@ function setFavouriteButtonActions(status) {
 
 function getRestoFavouriteStatus(id) {
   const status = getRestoFavouriteRegsistry(id);
-  status.onsuccess = () => {
-    setFavouriteButtonActions(status.result);
-  };
+  if (!status) {
+    return false;
+  }
+  setFavouriteButtonActions(status);
+  return true;
 }
 
 function handleFavouritedResto(data) {
