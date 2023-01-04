@@ -22,6 +22,9 @@ async function addDataToDb(data) {
 }
 
 async function getData(id) {
+  if (!id) {
+    return;
+  }
   const response = (await openDB(DB_CONFIG.storeName))
     .transaction(DB_CONFIG.storeName, "readonly")
     .objectStore(DB_CONFIG.storeName)
