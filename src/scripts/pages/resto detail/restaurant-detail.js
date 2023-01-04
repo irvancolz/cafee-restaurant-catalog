@@ -96,6 +96,7 @@ function createRestoComments(list) {
 // add to favourite handling
 
 function setFavouriteButtonActions(status) {
+  console.log(status)
   const favouriteBtn = document.querySelector(".favourite-btn");
   if (status) {
     favouriteBtn.innerHTML = "Favourited";
@@ -106,8 +107,8 @@ function setFavouriteButtonActions(status) {
   }
 }
 
-function getRestoFavouriteStatus(id) {
-  const status = getRestoFavouriteRegsistry(id);
+async function getRestoFavouriteStatus(id) {
+  const status = await getRestoFavouriteRegsistry(id);
   if (!status) {
     return false;
   }

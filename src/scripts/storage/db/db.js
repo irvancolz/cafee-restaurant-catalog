@@ -49,7 +49,7 @@ async function getData(id) {
   const response = (await openDB(DB_CONFIG.storeName))
     .transaction(DB_CONFIG.storeName, "readonly")
     .objectStore(DB_CONFIG.storeName)
-    .get(id)
+    .get(id);
   return response;
 }
 
@@ -66,12 +66,15 @@ async function getDataList() {
   return response;
 }
 
-function deleteDataFromDb(id) {
+async function deleteDataFromDb(id) {
   // const result = db.result;
   // const transaction = result.transaction("favourite-resto", "readwrite");
   // const store = transaction.objectStore("favourite-resto");
-
   // store.delete(id);
+  (await openDB(DB_CONFIG.storeName))
+    .transaction(DB_CONFIG.storeName, "readwrite")
+    .objectStore(DB_CONFIG.storeName)
+    .delete(id);
   console.log("data deleted!");
 }
 
