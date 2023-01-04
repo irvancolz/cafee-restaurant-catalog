@@ -116,8 +116,6 @@ function getRestoFavouriteStatus(id) {
 function handleFavouritedResto(data) {
   getRestoFavouriteStatus(data.id);
   const favouriteBtn = document.querySelector(".favourite-btn");
-  // const addFavouriteBtn = document.querySelector('[data-favourited="true"]');
-  // const delFavouriteBtn = document.querySelector('[data-favourited="false"]');
 
   favouriteBtn.addEventListener("click", () => {
     const favStatus = favouriteBtn.getAttribute("data-favourited");
