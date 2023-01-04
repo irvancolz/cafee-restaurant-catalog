@@ -95,8 +95,8 @@ function createRestoComments(list) {
 
 // add to favourite handling
 
-function setFavouriteButtonActions(status) {
-  console.log(status)
+async function setFavouriteButtonActions(id) {
+  const status = await getRestoFavouriteRegsistry(id);
   const favouriteBtn = document.querySelector(".favourite-btn");
   if (status) {
     favouriteBtn.innerHTML = "Favourited";
@@ -107,17 +107,8 @@ function setFavouriteButtonActions(status) {
   }
 }
 
-async function getRestoFavouriteStatus(id) {
-  const status = await getRestoFavouriteRegsistry(id);
-  if (!status) {
-    return false;
-  }
-  setFavouriteButtonActions(status);
-  return true;
-}
-
-function handleFavouritedResto(data) {
-  getRestoFavouriteStatus(data.id);
+async function handleFavouritedResto(data) {
+  await setFavouriteButtonActions(data.id);
   const favouriteBtn = document.querySelector(".favourite-btn");
 
   favouriteBtn.addEventListener("click", () => {
@@ -128,7 +119,7 @@ function handleFavouritedResto(data) {
     if (favStatus === "false") {
       addToFavourite(data);
     }
-    getRestoFavouriteStatus(data.id);
+    setFavouriteButtonActions(data.id);
   });
 }
 

@@ -7,7 +7,7 @@
     "dev": "webpack-dev-server --config webpack.dev.js --port 8000",
     "build": "webpack --config webpack.prod.js",
     "lint": "eslint ./src/scripts",
-    "test": "jest",
+    "test": "jest --silent",
     "sw": "workbox generateSW workbox-config.js",
     "serve": "http-server dist --port 3000"
   },
