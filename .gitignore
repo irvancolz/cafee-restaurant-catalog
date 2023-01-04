@@ -4,3 +4,5 @@ dist
 
 # Local Netlify folder
 .netlify
+
+.vscode
