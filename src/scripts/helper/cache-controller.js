@@ -34,6 +34,10 @@ export const cacheController = {
   },
 
   async _validateCache(request) {
+    if (request.method === "POST") {
+      const data = await fetch(request);
+      return data;
+    }
     const opt = {
       mode: request.mode,
       cache: "no-cache",
