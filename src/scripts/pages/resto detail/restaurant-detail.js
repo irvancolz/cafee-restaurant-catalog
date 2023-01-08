@@ -101,9 +101,11 @@ async function setFavouriteButtonActions(id) {
   if (status) {
     favouriteBtn.innerHTML = "Favourited";
     favouriteBtn.setAttribute("data-favourited", "true");
+    favouriteBtn.setAttribute("aria-label", "remove this restaurant from favourite");
   } else {
     favouriteBtn.innerHTML = "Add Favourite";
     favouriteBtn.setAttribute("data-favourited", "false");
+    favouriteBtn.setAttribute("aria-label", "add this restaurant to favourite");
   }
 }
 

@@ -7,9 +7,10 @@
     "dev": "webpack-dev-server --config webpack.dev.js --port 8000",
     "build": "webpack --config webpack.prod.js",
     "lint": "eslint ./src/scripts",
-    "test": "jest --silent",
+    "test": "jest --silent --watchAll",
     "sw": "workbox generateSW workbox-config.js",
-    "serve": "http-server dist --port 3000"
+    "serve": "http-server dist --port 3000",
+    "e2e": "cypress open"
   },
   "keywords": [],
   "author": "your_name <your.email@domain.com>",
@@ -22,6 +23,7 @@
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
+    "cypress": "^12.3.0",
     "eslint": "^8.29.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
