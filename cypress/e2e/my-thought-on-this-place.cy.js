@@ -9,10 +9,10 @@ describe("review restaurant", () => {
     cy.visit(`http://localhost:8000/#/resto/${id}`);
     cy.get(".customer-review__input").type(review);
     cy.get(".customer-review__submit").click();
-    // cy.reload(true);
     cy.get("custom-comment")
       .shadow()
       .find(".review__detail")
-      .contains(review, { matchCase: false });
+      .last()
+      .should("have.text", review)
   });
 });
