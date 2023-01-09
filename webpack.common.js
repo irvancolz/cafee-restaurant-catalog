@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
 module.exports = {
   entry: {
@@ -42,13 +43,13 @@ module.exports = {
   },
   optimization: {
     splitChunks: {
-      chunks: 'all',
+      chunks: "all",
       minSize: 20000,
       maxSize: 70000,
       minChunks: 1,
       maxAsyncRequests: 30,
       maxInitialRequests: 30,
-      automaticNameDelimiter: '~',
+      automaticNameDelimiter: "~",
       enforceSizeThreshold: 50000,
       cacheGroups: {
         defaultVendors: {
@@ -77,5 +78,6 @@ module.exports = {
       ],
     }),
     new CleanWebpackPlugin(),
+    new BundleAnalyzerPlugin()
   ],
 };
