@@ -86,6 +86,7 @@ function createContentFromList(list, container) {
 
 function createRestoComments(list) {
   const commetContainer = document.getElementById("customer-review");
+  commetContainer.innerHTML = ""
   list.forEach((content) => {
     const item = document.createElement("custom-comment");
     item.comment = content;

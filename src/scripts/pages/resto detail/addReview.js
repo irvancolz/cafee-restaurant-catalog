@@ -1,4 +1,5 @@
 import { API_ROUTES } from "../../api";
+import { createRestoComments } from "./restaurant-detail";
 
 export const AddReview = {
   init(id) {
@@ -31,7 +32,11 @@ export const AddReview = {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(body),
-    });
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        createRestoComments(response.customerReviews);
+      });
     document.querySelector(".customer-review__input").value = "";
   },
 };
