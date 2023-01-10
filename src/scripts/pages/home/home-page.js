@@ -1,16 +1,20 @@
 import { GetRestaurant } from "../../api";
 import { createRestaurantCards } from "../../helper";
-import heroImg from "../../../public/images/heros/hero-image_3.webp"
+import heroImg from "../../../public/images/heros/hero-image_3.webp";
+import heroImgMobile from "../../../public/images/heros/hero-image_3_mobile.webp";
 
 export const Home = {
   async render() {
-    document.title = 'Cafee'
+    document.title = "Cafee";
     return `
     <div class="hero">
     <h1 class="hero__text">
       Look no further for interesting restaurants
     </h1>
-    <img class="hero__img" src=${heroImg} alt=""/>
+    <picture>
+    <source media="(min-width: 900px)" srcset=${heroImg}>
+      <img class="hero__img" src=${heroImgMobile} alt=""/>
+    </picture>
   </div>
   <section id="content" class="hotspots container">
     <div class="hotspots__title__container">
