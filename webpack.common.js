@@ -63,6 +63,7 @@ module.exports = {
         },
       },
     },
+    minimize: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
