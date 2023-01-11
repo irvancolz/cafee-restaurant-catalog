@@ -22,6 +22,7 @@ describe("like restaurant", () => {
     // check the favourite status of the latest restaurant added to favourite
     cy.get(".restaurants__title a").last().click();
     cy.get(".favourite-btn")
+      .wait(1000)
       .invoke("attr", "data-favourited")
       .should("eq", "true");
   });
