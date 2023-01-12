@@ -42,6 +42,7 @@ module.exports = {
     ],
   },
   optimization: {
+    runtimeChunk: "single",
     splitChunks: {
       chunks: "all",
       minSize: 20000,
@@ -79,6 +80,6 @@ module.exports = {
       ],
     }),
     new CleanWebpackPlugin(),
-    new BundleAnalyzerPlugin()
+    new BundleAnalyzerPlugin(),
   ],
 };
