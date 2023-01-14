@@ -1,8 +1,6 @@
 /* eslint-disable no-useless-return */
 // import { cacheController } from "./helper";
 
-// import { precacheAndRoute } from "workbox-precaching";
-
 // console.log("service worker here");
 
 // self.addEventListener("message", (event) => {
