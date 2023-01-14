@@ -12,13 +12,13 @@ import "../styles/button.css";
 import "./components";
 import App from "./app";
 import "./storage/db";
-import { registerServiceWorker } from "./helper";
+// import { registerServiceWorker } from "./helper";
 
 const app = new App({ content: document.querySelector("#main") });
 
 window.addEventListener("load", async () => {
   await app.renderPage();
-  await registerServiceWorker();
+  // await registerServiceWorker();
 });
 
 window.addEventListener("hashchange", async () => {

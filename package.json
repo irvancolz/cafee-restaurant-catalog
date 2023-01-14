@@ -7,7 +7,7 @@
     "dev": "webpack-dev-server --config webpack.dev.js --port 8000",
     "build": "webpack --config webpack.prod.js",
     "lint": "eslint ./src/scripts",
-    "test": "jest --silent --watchAll",
+    "test": "jest --silent",
     "sw": "workbox generateSW workbox-config.js",
     "serve": "http-server dist --port 3000",
     "e2e": "cypress open"
@@ -56,6 +56,7 @@
   "dependencies": {
     "idb": "^7.1.1",
     "regenerator-runtime": "^0.13.9",
+    "workbox-precaching": "^6.5.4",
     "workbox-window": "^6.5.4"
   }
 }

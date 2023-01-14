@@ -1,3 +1,4 @@
+import { Workbox } from "workbox-window";
 
 export async function registerServiceWorker() {
   if (!("serviceWorker" in navigator)) {
@@ -5,7 +6,9 @@ export async function registerServiceWorker() {
     return;
   }
   try {
-    await navigator.serviceWorker.register("/sw.bundle.js")
+    const workbox = new Workbox("/sw.bundle.js");
+    await workbox.register();
+    console.log("registering sw")
   } catch (error) {
     console.error(error);
   }

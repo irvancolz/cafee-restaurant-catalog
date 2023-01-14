@@ -1,6 +1,8 @@
-const AssetToBeCached = [
+export const AssetToBeCached = [
   "app.bundle.js",
   "sw.bundle.js",
+  "vendors.bundle.js",
+  "runtime.bundle.js",
   "/",
   "index.html",
   "app.webmanifest",
@@ -10,6 +12,7 @@ const AssetToBeCached = [
   "/images/manifest-icons-large.png",
   "/images/profile-picture.png",
   "/images/heros/hero-image_3.webp",
+  "/images/heros/hero-image_3_mobile.webp",
 ];
 
 export const cacheController = {

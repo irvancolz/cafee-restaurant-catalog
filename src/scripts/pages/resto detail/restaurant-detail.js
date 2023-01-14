@@ -1,3 +1,4 @@
+import { GetRestaurant } from "../../api/apicall";
 import {
   addToFavourite,
   deleteFromFavourite,
@@ -46,7 +47,8 @@ function createRestaurantDetailMainContent(data) {
             <button 
               aria-label="add this restaurant to favourite" 
               class="button favourite-btn outlined-button"
-              data-favourited="false">
+              data-favourited="false"
+              data-restoId="${data.id}">
               Add Favourite
             </button>
         </div>
@@ -86,7 +88,7 @@ function createContentFromList(list, container) {
 
 function createRestoComments(list) {
   const commetContainer = document.getElementById("customer-review");
-  commetContainer.innerHTML = ""
+  commetContainer.innerHTML = "";
   list.forEach((content) => {
     const item = document.createElement("custom-comment");
     item.comment = content;
@@ -102,7 +104,10 @@ async function setFavouriteButtonActions(id) {
   if (status) {
     favouriteBtn.innerHTML = "Favourited";
     favouriteBtn.setAttribute("data-favourited", "true");
-    favouriteBtn.setAttribute("aria-label", "remove this restaurant from favourite");
+    favouriteBtn.setAttribute(
+      "aria-label",
+      "remove this restaurant from favourite"
+    );
   } else {
     favouriteBtn.innerHTML = "Add Favourite";
     favouriteBtn.setAttribute("data-favourited", "false");
@@ -111,7 +116,6 @@ async function setFavouriteButtonActions(id) {
 }
 
 async function handleFavouritedResto(data) {
-  await setFavouriteButtonActions(data.id);
   const favouriteBtn = document.querySelector(".favourite-btn");
 
   favouriteBtn.addEventListener("click", () => {
@@ -120,7 +124,9 @@ async function handleFavouritedResto(data) {
       deleteFromFavourite(data.id);
     }
     if (favStatus === "false") {
-      addToFavourite(data);
+      GetRestaurant.detail(data.id).then((data) => {
+        addToFavourite(data);
+      });
     }
     setFavouriteButtonActions(data.id);
   });
