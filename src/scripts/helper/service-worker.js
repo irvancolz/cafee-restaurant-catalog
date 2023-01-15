@@ -8,7 +8,6 @@ export async function registerServiceWorker() {
   try {
     const workbox = new Workbox("/sw.bundle.js");
     await workbox.register();
-    console.log("registering sw")
   } catch (error) {
     console.error(error);
   }
