@@ -1,3 +1,3 @@
 export * from "./restaurant";
 export * from "./service-worker";
-// export * from "./cache-controller";
+export * from "./favourite-button-handler";

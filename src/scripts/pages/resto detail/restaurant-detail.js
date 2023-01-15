@@ -1,9 +1,4 @@
-import { GetRestaurant } from "../../api/apicall";
-import {
-  addToFavourite,
-  deleteFromFavourite,
-  getRestoFavouriteRegsistry,
-} from "../../storage";
+import { FavouriteButtonHandler } from "../../helper/favourite-button-handler";
 
 function createRestaurantDetailMainContent(data) {
   return ` 
@@ -48,7 +43,7 @@ function createRestaurantDetailMainContent(data) {
               aria-label="add this restaurant to favourite" 
               class="button favourite-btn outlined-button"
               data-favourited="false"
-              data-restoId="${data.id}">
+              >
               Add Favourite
             </button>
         </div>
@@ -96,39 +91,12 @@ function createRestoComments(list) {
   });
 }
 
-// add to favourite handling
-
-async function setFavouriteButtonActions(id) {
-  const status = await getRestoFavouriteRegsistry(id);
-  const favouriteBtn = document.querySelector(".favourite-btn");
-  if (status) {
-    favouriteBtn.innerHTML = "Favourited";
-    favouriteBtn.setAttribute("data-favourited", "true");
-    favouriteBtn.setAttribute(
-      "aria-label",
-      "remove this restaurant from favourite"
-    );
-  } else {
-    favouriteBtn.innerHTML = "Add Favourite";
-    favouriteBtn.setAttribute("data-favourited", "false");
-    favouriteBtn.setAttribute("aria-label", "add this restaurant to favourite");
-  }
-}
-
 async function handleFavouritedResto(data) {
   const favouriteBtn = document.querySelector(".favourite-btn");
 
-  favouriteBtn.addEventListener("click", () => {
-    const favStatus = favouriteBtn.getAttribute("data-favourited");
-    if (favStatus === "true") {
-      deleteFromFavourite(data.id);
-    }
-    if (favStatus === "false") {
-      GetRestaurant.detail(data.id).then((data) => {
-        addToFavourite(data);
-      });
-    }
-    setFavouriteButtonActions(data.id);
+  await FavouriteButtonHandler.init({
+    trigger: favouriteBtn,
+    data,
   });
 }
 
