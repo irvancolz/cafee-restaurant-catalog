@@ -49,8 +49,9 @@ describe("Delete Movie from Favourite", () => {
     list.forEach((item) => deleteFromFavourite(item.id));
   });
   test("dont delete when undefined", async () => {
+    await addToFavourite({ id: 1 });
     const resto = undefined;
-    addToFavourite(resto);
-    expect(await getRestoFavouriteList()).toEqual([]);
+    deleteFromFavourite(resto);
+    expect(await getRestoFavouriteList()).toEqual([{ id: 1 }]);
   });
 });

@@ -2,10 +2,10 @@ import {
   addToFavourite,
   deleteFromFavourite,
   getRestoFavouriteRegsistry,
-} from "../storage";
+} from "../../storage";
 
 export const FavouriteButtonHandler = {
-  async init({ trigger, data }) {
+  async _init({ trigger, data }) {
     this._trigger = trigger;
     this._data = data;
 

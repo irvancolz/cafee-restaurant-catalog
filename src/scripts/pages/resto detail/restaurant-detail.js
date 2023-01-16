@@ -94,7 +94,7 @@ function createRestoComments(list) {
 async function handleFavouritedResto(data) {
   const favouriteBtn = document.querySelector(".favourite-btn");
 
-  await FavouriteButtonHandler.init({
+  await FavouriteButtonHandler._init({
     trigger: favouriteBtn,
     data,
   });
