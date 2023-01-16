@@ -52,7 +52,7 @@ export const RestoDetail = {
     const res = await GetRestaurant.filterRestaurantWithRating(4.8);
     this._createMainContent(data);
     this._createRestaurantListContent(res);
-    document.title = `Cafee | ${data.name}`
+    document.title = `Cafee | ${data.name}`;
     AddReview.init(id);
     handleFavouritedResto(data);
   },

@@ -1,8 +1,4 @@
-import {
-  addToFavourite,
-  deleteFromFavourite,
-  getRestoFavouriteRegsistry,
-} from "../../storage";
+import { FavouriteButtonHandler } from "../../helper/favourite-button-handler";
 
 function createRestaurantDetailMainContent(data) {
   return ` 
@@ -46,7 +42,8 @@ function createRestaurantDetailMainContent(data) {
             <button 
               aria-label="add this restaurant to favourite" 
               class="button favourite-btn outlined-button"
-              data-favourited="false">
+              data-favourited="false"
+              >
               Add Favourite
             </button>
         </div>
@@ -86,6 +83,7 @@ function createContentFromList(list, container) {
 
 function createRestoComments(list) {
   const commetContainer = document.getElementById("customer-review");
+  commetContainer.innerHTML = "";
   list.forEach((content) => {
     const item = document.createElement("custom-comment");
     item.comment = content;
@@ -93,35 +91,12 @@ function createRestoComments(list) {
   });
 }
 
-// add to favourite handling
-
-async function setFavouriteButtonActions(id) {
-  const status = await getRestoFavouriteRegsistry(id);
-  const favouriteBtn = document.querySelector(".favourite-btn");
-  if (status) {
-    favouriteBtn.innerHTML = "Favourited";
-    favouriteBtn.setAttribute("data-favourited", "true");
-    favouriteBtn.setAttribute("aria-label", "remove this restaurant from favourite");
-  } else {
-    favouriteBtn.innerHTML = "Add Favourite";
-    favouriteBtn.setAttribute("data-favourited", "false");
-    favouriteBtn.setAttribute("aria-label", "add this restaurant to favourite");
-  }
-}
-
 async function handleFavouritedResto(data) {
-  await setFavouriteButtonActions(data.id);
   const favouriteBtn = document.querySelector(".favourite-btn");
 
-  favouriteBtn.addEventListener("click", () => {
-    const favStatus = favouriteBtn.getAttribute("data-favourited");
-    if (favStatus === "true") {
-      deleteFromFavourite(data.id);
-    }
-    if (favStatus === "false") {
-      addToFavourite(data);
-    }
-    setFavouriteButtonActions(data.id);
+  await FavouriteButtonHandler._init({
+    trigger: favouriteBtn,
+    data,
   });
 }
 

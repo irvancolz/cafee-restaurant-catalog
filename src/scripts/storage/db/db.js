@@ -41,6 +41,9 @@ async function getDataList() {
 }
 
 async function deleteDataFromDb(id) {
+  if (!id) {
+    return;
+  }
   (await openDB(DB_CONFIG.storeName))
     .transaction(DB_CONFIG.storeName, "readwrite")
     .objectStore(DB_CONFIG.storeName)
